@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TW Framework - Complete CSS Framework with Reset, Typography, Colors & Grid</title>
+    <title>TW Framework - Complete CSS Framework with Reset, Typography, Colors, Spacing & Grid</title>
     <style>
         /* ========================================
            CSS RESET & BASE
@@ -107,6 +107,469 @@
             font-weight: 400;
             font-style: normal;
             font-display: swap;
+        }
+
+        /* ========================================
+           SPACING SYSTEM
+           ======================================== */
+        
+        /* CSS Variables for Spacing */
+        :root {
+            /* Spacing Scale - Based on 0.25rem (4px) */
+            --tw-space-0: 0;
+            --tw-space-1: 0.25rem;   /* 4px */
+            --tw-space-2: 0.5rem;    /* 8px */
+            --tw-space-3: 0.75rem;   /* 12px */
+            --tw-space-4: 1rem;      /* 16px */
+            --tw-space-5: 1.25rem;   /* 20px */
+            --tw-space-6: 1.5rem;    /* 24px */
+            --tw-space-7: 1.75rem;   /* 28px */
+            --tw-space-8: 2rem;      /* 32px */
+            --tw-space-9: 2.25rem;   /* 36px */
+            --tw-space-10: 2.5rem;   /* 40px */
+            --tw-space-11: 2.75rem;  /* 44px */
+            --tw-space-12: 3rem;     /* 48px */
+            --tw-space-14: 3.5rem;   /* 56px */
+            --tw-space-16: 4rem;     /* 64px */
+            --tw-space-20: 5rem;     /* 80px */
+            --tw-space-24: 6rem;     /* 96px */
+            --tw-space-28: 7rem;     /* 112px */
+            --tw-space-32: 8rem;     /* 128px */
+            --tw-space-36: 9rem;     /* 144px */
+            --tw-space-40: 10rem;    /* 160px */
+            --tw-space-44: 11rem;    /* 176px */
+            --tw-space-48: 12rem;    /* 192px */
+            --tw-space-52: 13rem;    /* 208px */
+            --tw-space-56: 14rem;    /* 224px */
+            --tw-space-60: 15rem;    /* 240px */
+            --tw-space-64: 16rem;    /* 256px */
+            --tw-space-72: 18rem;    /* 288px */
+            --tw-space-80: 20rem;    /* 320px */
+            --tw-space-96: 24rem;    /* 384px */
+        }
+
+        /* ========================================
+           MARGIN UTILITIES
+           ======================================== */
+        
+        /* Margin - All Sides */
+        .tw-m-0 { margin: var(--tw-space-0); }
+        .tw-m-1 { margin: var(--tw-space-1); }
+        .tw-m-2 { margin: var(--tw-space-2); }
+        .tw-m-3 { margin: var(--tw-space-3); }
+        .tw-m-4 { margin: var(--tw-space-4); }
+        .tw-m-5 { margin: var(--tw-space-5); }
+        .tw-m-6 { margin: var(--tw-space-6); }
+        .tw-m-7 { margin: var(--tw-space-7); }
+        .tw-m-8 { margin: var(--tw-space-8); }
+        .tw-m-9 { margin: var(--tw-space-9); }
+        .tw-m-10 { margin: var(--tw-space-10); }
+        .tw-m-12 { margin: var(--tw-space-12); }
+        .tw-m-14 { margin: var(--tw-space-14); }
+        .tw-m-16 { margin: var(--tw-space-16); }
+        .tw-m-20 { margin: var(--tw-space-20); }
+        .tw-m-24 { margin: var(--tw-space-24); }
+        .tw-m-auto { margin: auto; }
+        
+        /* Margin - Horizontal (X-axis) */
+        .tw-mx-0 { margin-left: var(--tw-space-0); margin-right: var(--tw-space-0); }
+        .tw-mx-1 { margin-left: var(--tw-space-1); margin-right: var(--tw-space-1); }
+        .tw-mx-2 { margin-left: var(--tw-space-2); margin-right: var(--tw-space-2); }
+        .tw-mx-3 { margin-left: var(--tw-space-3); margin-right: var(--tw-space-3); }
+        .tw-mx-4 { margin-left: var(--tw-space-4); margin-right: var(--tw-space-4); }
+        .tw-mx-5 { margin-left: var(--tw-space-5); margin-right: var(--tw-space-5); }
+        .tw-mx-6 { margin-left: var(--tw-space-6); margin-right: var(--tw-space-6); }
+        .tw-mx-7 { margin-left: var(--tw-space-7); margin-right: var(--tw-space-7); }
+        .tw-mx-8 { margin-left: var(--tw-space-8); margin-right: var(--tw-space-8); }
+        .tw-mx-9 { margin-left: var(--tw-space-9); margin-right: var(--tw-space-9); }
+        .tw-mx-10 { margin-left: var(--tw-space-10); margin-right: var(--tw-space-10); }
+        .tw-mx-12 { margin-left: var(--tw-space-12); margin-right: var(--tw-space-12); }
+        .tw-mx-16 { margin-left: var(--tw-space-16); margin-right: var(--tw-space-16); }
+        .tw-mx-20 { margin-left: var(--tw-space-20); margin-right: var(--tw-space-20); }
+        .tw-mx-24 { margin-left: var(--tw-space-24); margin-right: var(--tw-space-24); }
+        .tw-mx-auto { margin-left: auto; margin-right: auto; }
+        
+        /* Margin - Vertical (Y-axis) */
+        .tw-my-0 { margin-top: var(--tw-space-0); margin-bottom: var(--tw-space-0); }
+        .tw-my-1 { margin-top: var(--tw-space-1); margin-bottom: var(--tw-space-1); }
+        .tw-my-2 { margin-top: var(--tw-space-2); margin-bottom: var(--tw-space-2); }
+        .tw-my-3 { margin-top: var(--tw-space-3); margin-bottom: var(--tw-space-3); }
+        .tw-my-4 { margin-top: var(--tw-space-4); margin-bottom: var(--tw-space-4); }
+        .tw-my-5 { margin-top: var(--tw-space-5); margin-bottom: var(--tw-space-5); }
+        .tw-my-6 { margin-top: var(--tw-space-6); margin-bottom: var(--tw-space-6); }
+        .tw-my-7 { margin-top: var(--tw-space-7); margin-bottom: var(--tw-space-7); }
+        .tw-my-8 { margin-top: var(--tw-space-8); margin-bottom: var(--tw-space-8); }
+        .tw-my-9 { margin-top: var(--tw-space-9); margin-bottom: var(--tw-space-9); }
+        .tw-my-10 { margin-top: var(--tw-space-10); margin-bottom: var(--tw-space-10); }
+        .tw-my-12 { margin-top: var(--tw-space-12); margin-bottom: var(--tw-space-12); }
+        .tw-my-16 { margin-top: var(--tw-space-16); margin-bottom: var(--tw-space-16); }
+        .tw-my-20 { margin-top: var(--tw-space-20); margin-bottom: var(--tw-space-20); }
+        .tw-my-24 { margin-top: var(--tw-space-24); margin-bottom: var(--tw-space-24); }
+        .tw-my-auto { margin-top: auto; margin-bottom: auto; }
+        
+        /* Margin - Top */
+        .tw-mt-0 { margin-top: var(--tw-space-0); }
+        .tw-mt-1 { margin-top: var(--tw-space-1); }
+        .tw-mt-2 { margin-top: var(--tw-space-2); }
+        .tw-mt-3 { margin-top: var(--tw-space-3); }
+        .tw-mt-4 { margin-top: var(--tw-space-4); }
+        .tw-mt-5 { margin-top: var(--tw-space-5); }
+        .tw-mt-6 { margin-top: var(--tw-space-6); }
+        .tw-mt-7 { margin-top: var(--tw-space-7); }
+        .tw-mt-8 { margin-top: var(--tw-space-8); }
+        .tw-mt-9 { margin-top: var(--tw-space-9); }
+        .tw-mt-10 { margin-top: var(--tw-space-10); }
+        .tw-mt-12 { margin-top: var(--tw-space-12); }
+        .tw-mt-16 { margin-top: var(--tw-space-16); }
+        .tw-mt-20 { margin-top: var(--tw-space-20); }
+        .tw-mt-24 { margin-top: var(--tw-space-24); }
+        .tw-mt-32 { margin-top: var(--tw-space-32); }
+        .tw-mt-auto { margin-top: auto; }
+        
+        /* Margin - Right */
+        .tw-mr-0 { margin-right: var(--tw-space-0); }
+        .tw-mr-1 { margin-right: var(--tw-space-1); }
+        .tw-mr-2 { margin-right: var(--tw-space-2); }
+        .tw-mr-3 { margin-right: var(--tw-space-3); }
+        .tw-mr-4 { margin-right: var(--tw-space-4); }
+        .tw-mr-5 { margin-right: var(--tw-space-5); }
+        .tw-mr-6 { margin-right: var(--tw-space-6); }
+        .tw-mr-7 { margin-right: var(--tw-space-7); }
+        .tw-mr-8 { margin-right: var(--tw-space-8); }
+        .tw-mr-9 { margin-right: var(--tw-space-9); }
+        .tw-mr-10 { margin-right: var(--tw-space-10); }
+        .tw-mr-12 { margin-right: var(--tw-space-12); }
+        .tw-mr-16 { margin-right: var(--tw-space-16); }
+        .tw-mr-20 { margin-right: var(--tw-space-20); }
+        .tw-mr-24 { margin-right: var(--tw-space-24); }
+        .tw-mr-32 { margin-right: var(--tw-space-32); }
+        .tw-mr-auto { margin-right: auto; }
+        
+        /* Margin - Bottom */
+        .tw-mb-0 { margin-bottom: var(--tw-space-0); }
+        .tw-mb-1 { margin-bottom: var(--tw-space-1); }
+        .tw-mb-2 { margin-bottom: var(--tw-space-2); }
+        .tw-mb-3 { margin-bottom: var(--tw-space-3); }
+        .tw-mb-4 { margin-bottom: var(--tw-space-4); }
+        .tw-mb-5 { margin-bottom: var(--tw-space-5); }
+        .tw-mb-6 { margin-bottom: var(--tw-space-6); }
+        .tw-mb-7 { margin-bottom: var(--tw-space-7); }
+        .tw-mb-8 { margin-bottom: var(--tw-space-8); }
+        .tw-mb-9 { margin-bottom: var(--tw-space-9); }
+        .tw-mb-10 { margin-bottom: var(--tw-space-10); }
+        .tw-mb-12 { margin-bottom: var(--tw-space-12); }
+        .tw-mb-16 { margin-bottom: var(--tw-space-16); }
+        .tw-mb-20 { margin-bottom: var(--tw-space-20); }
+        .tw-mb-24 { margin-bottom: var(--tw-space-24); }
+        .tw-mb-32 { margin-bottom: var(--tw-space-32); }
+        .tw-mb-auto { margin-bottom: auto; }
+        
+        /* Margin - Left */
+        .tw-ml-0 { margin-left: var(--tw-space-0); }
+        .tw-ml-1 { margin-left: var(--tw-space-1); }
+        .tw-ml-2 { margin-left: var(--tw-space-2); }
+        .tw-ml-3 { margin-left: var(--tw-space-3); }
+        .tw-ml-4 { margin-left: var(--tw-space-4); }
+        .tw-ml-5 { margin-left: var(--tw-space-5); }
+        .tw-ml-6 { margin-left: var(--tw-space-6); }
+        .tw-ml-7 { margin-left: var(--tw-space-7); }
+        .tw-ml-8 { margin-left: var(--tw-space-8); }
+        .tw-ml-9 { margin-left: var(--tw-space-9); }
+        .tw-ml-10 { margin-left: var(--tw-space-10); }
+        .tw-ml-12 { margin-left: var(--tw-space-12); }
+        .tw-ml-16 { margin-left: var(--tw-space-16); }
+        .tw-ml-20 { margin-left: var(--tw-space-20); }
+        .tw-ml-24 { margin-left: var(--tw-space-24); }
+        .tw-ml-32 { margin-left: var(--tw-space-32); }
+        .tw-ml-auto { margin-left: auto; }
+        
+        /* Negative Margins */
+        .tw--m-1 { margin: calc(var(--tw-space-1) * -1); }
+        .tw--m-2 { margin: calc(var(--tw-space-2) * -1); }
+        .tw--m-3 { margin: calc(var(--tw-space-3) * -1); }
+        .tw--m-4 { margin: calc(var(--tw-space-4) * -1); }
+        .tw--m-5 { margin: calc(var(--tw-space-5) * -1); }
+        .tw--m-6 { margin: calc(var(--tw-space-6) * -1); }
+        .tw--m-8 { margin: calc(var(--tw-space-8) * -1); }
+        
+        .tw--mt-1 { margin-top: calc(var(--tw-space-1) * -1); }
+        .tw--mt-2 { margin-top: calc(var(--tw-space-2) * -1); }
+        .tw--mt-3 { margin-top: calc(var(--tw-space-3) * -1); }
+        .tw--mt-4 { margin-top: calc(var(--tw-space-4) * -1); }
+        .tw--mt-5 { margin-top: calc(var(--tw-space-5) * -1); }
+        .tw--mt-6 { margin-top: calc(var(--tw-space-6) * -1); }
+        .tw--mt-8 { margin-top: calc(var(--tw-space-8) * -1); }
+        
+        .tw--mr-1 { margin-right: calc(var(--tw-space-1) * -1); }
+        .tw--mr-2 { margin-right: calc(var(--tw-space-2) * -1); }
+        .tw--mr-3 { margin-right: calc(var(--tw-space-3) * -1); }
+        .tw--mr-4 { margin-right: calc(var(--tw-space-4) * -1); }
+        .tw--mr-5 { margin-right: calc(var(--tw-space-5) * -1); }
+        .tw--mr-6 { margin-right: calc(var(--tw-space-6) * -1); }
+        .tw--mr-8 { margin-right: calc(var(--tw-space-8) * -1); }
+        
+        .tw--mb-1 { margin-bottom: calc(var(--tw-space-1) * -1); }
+        .tw--mb-2 { margin-bottom: calc(var(--tw-space-2) * -1); }
+        .tw--mb-3 { margin-bottom: calc(var(--tw-space-3) * -1); }
+        .tw--mb-4 { margin-bottom: calc(var(--tw-space-4) * -1); }
+        .tw--mb-5 { margin-bottom: calc(var(--tw-space-5) * -1); }
+        .tw--mb-6 { margin-bottom: calc(var(--tw-space-6) * -1); }
+        .tw--mb-8 { margin-bottom: calc(var(--tw-space-8) * -1); }
+        
+        .tw--ml-1 { margin-left: calc(var(--tw-space-1) * -1); }
+        .tw--ml-2 { margin-left: calc(var(--tw-space-2) * -1); }
+        .tw--ml-3 { margin-left: calc(var(--tw-space-3) * -1); }
+        .tw--ml-4 { margin-left: calc(var(--tw-space-4) * -1); }
+        .tw--ml-5 { margin-left: calc(var(--tw-space-5) * -1); }
+        .tw--ml-6 { margin-left: calc(var(--tw-space-6) * -1); }
+        .tw--ml-8 { margin-left: calc(var(--tw-space-8) * -1); }
+        
+        /* ========================================
+           PADDING UTILITIES
+           ======================================== */
+        
+        /* Padding - All Sides */
+        .tw-p-0 { padding: var(--tw-space-0); }
+        .tw-p-1 { padding: var(--tw-space-1); }
+        .tw-p-2 { padding: var(--tw-space-2); }
+        .tw-p-3 { padding: var(--tw-space-3); }
+        .tw-p-4 { padding: var(--tw-space-4); }
+        .tw-p-5 { padding: var(--tw-space-5); }
+        .tw-p-6 { padding: var(--tw-space-6); }
+        .tw-p-7 { padding: var(--tw-space-7); }
+        .tw-p-8 { padding: var(--tw-space-8); }
+        .tw-p-9 { padding: var(--tw-space-9); }
+        .tw-p-10 { padding: var(--tw-space-10); }
+        .tw-p-12 { padding: var(--tw-space-12); }
+        .tw-p-14 { padding: var(--tw-space-14); }
+        .tw-p-16 { padding: var(--tw-space-16); }
+        .tw-p-20 { padding: var(--tw-space-20); }
+        .tw-p-24 { padding: var(--tw-space-24); }
+        
+        /* Padding - Horizontal (X-axis) */
+        .tw-px-0 { padding-left: var(--tw-space-0); padding-right: var(--tw-space-0); }
+        .tw-px-1 { padding-left: var(--tw-space-1); padding-right: var(--tw-space-1); }
+        .tw-px-2 { padding-left: var(--tw-space-2); padding-right: var(--tw-space-2); }
+        .tw-px-3 { padding-left: var(--tw-space-3); padding-right: var(--tw-space-3); }
+        .tw-px-4 { padding-left: var(--tw-space-4); padding-right: var(--tw-space-4); }
+        .tw-px-5 { padding-left: var(--tw-space-5); padding-right: var(--tw-space-5); }
+        .tw-px-6 { padding-left: var(--tw-space-6); padding-right: var(--tw-space-6); }
+        .tw-px-7 { padding-left: var(--tw-space-7); padding-right: var(--tw-space-7); }
+        .tw-px-8 { padding-left: var(--tw-space-8); padding-right: var(--tw-space-8); }
+        .tw-px-9 { padding-left: var(--tw-space-9); padding-right: var(--tw-space-9); }
+        .tw-px-10 { padding-left: var(--tw-space-10); padding-right: var(--tw-space-10); }
+        .tw-px-12 { padding-left: var(--tw-space-12); padding-right: var(--tw-space-12); }
+        .tw-px-16 { padding-left: var(--tw-space-16); padding-right: var(--tw-space-16); }
+        .tw-px-20 { padding-left: var(--tw-space-20); padding-right: var(--tw-space-20); }
+        .tw-px-24 { padding-left: var(--tw-space-24); padding-right: var(--tw-space-24); }
+        
+        /* Padding - Vertical (Y-axis) */
+        .tw-py-0 { padding-top: var(--tw-space-0); padding-bottom: var(--tw-space-0); }
+        .tw-py-1 { padding-top: var(--tw-space-1); padding-bottom: var(--tw-space-1); }
+        .tw-py-2 { padding-top: var(--tw-space-2); padding-bottom: var(--tw-space-2); }
+        .tw-py-3 { padding-top: var(--tw-space-3); padding-bottom: var(--tw-space-3); }
+        .tw-py-4 { padding-top: var(--tw-space-4); padding-bottom: var(--tw-space-4); }
+        .tw-py-5 { padding-top: var(--tw-space-5); padding-bottom: var(--tw-space-5); }
+        .tw-py-6 { padding-top: var(--tw-space-6); padding-bottom: var(--tw-space-6); }
+        .tw-py-7 { padding-top: var(--tw-space-7); padding-bottom: var(--tw-space-7); }
+        .tw-py-8 { padding-top: var(--tw-space-8); padding-bottom: var(--tw-space-8); }
+        .tw-py-9 { padding-top: var(--tw-space-9); padding-bottom: var(--tw-space-9); }
+        .tw-py-10 { padding-top: var(--tw-space-10); padding-bottom: var(--tw-space-10); }
+        .tw-py-12 { padding-top: var(--tw-space-12); padding-bottom: var(--tw-space-12); }
+        .tw-py-16 { padding-top: var(--tw-space-16); padding-bottom: var(--tw-space-16); }
+        .tw-py-20 { padding-top: var(--tw-space-20); padding-bottom: var(--tw-space-20); }
+        .tw-py-24 { padding-top: var(--tw-space-24); padding-bottom: var(--tw-space-24); }
+        
+        /* Padding - Top */
+        .tw-pt-0 { padding-top: var(--tw-space-0); }
+        .tw-pt-1 { padding-top: var(--tw-space-1); }
+        .tw-pt-2 { padding-top: var(--tw-space-2); }
+        .tw-pt-3 { padding-top: var(--tw-space-3); }
+        .tw-pt-4 { padding-top: var(--tw-space-4); }
+        .tw-pt-5 { padding-top: var(--tw-space-5); }
+        .tw-pt-6 { padding-top: var(--tw-space-6); }
+        .tw-pt-7 { padding-top: var(--tw-space-7); }
+        .tw-pt-8 { padding-top: var(--tw-space-8); }
+        .tw-pt-9 { padding-top: var(--tw-space-9); }
+        .tw-pt-10 { padding-top: var(--tw-space-10); }
+        .tw-pt-12 { padding-top: var(--tw-space-12); }
+        .tw-pt-16 { padding-top: var(--tw-space-16); }
+        .tw-pt-20 { padding-top: var(--tw-space-20); }
+        .tw-pt-24 { padding-top: var(--tw-space-24); }
+        .tw-pt-32 { padding-top: var(--tw-space-32); }
+        
+        /* Padding - Right */
+        .tw-pr-0 { padding-right: var(--tw-space-0); }
+        .tw-pr-1 { padding-right: var(--tw-space-1); }
+        .tw-pr-2 { padding-right: var(--tw-space-2); }
+        .tw-pr-3 { padding-right: var(--tw-space-3); }
+        .tw-pr-4 { padding-right: var(--tw-space-4); }
+        .tw-pr-5 { padding-right: var(--tw-space-5); }
+        .tw-pr-6 { padding-right: var(--tw-space-6); }
+        .tw-pr-7 { padding-right: var(--tw-space-7); }
+        .tw-pr-8 { padding-right: var(--tw-space-8); }
+        .tw-pr-9 { padding-right: var(--tw-space-9); }
+        .tw-pr-10 { padding-right: var(--tw-space-10); }
+        .tw-pr-12 { padding-right: var(--tw-space-12); }
+        .tw-pr-16 { padding-right: var(--tw-space-16); }
+        .tw-pr-20 { padding-right: var(--tw-space-20); }
+        .tw-pr-24 { padding-right: var(--tw-space-24); }
+        .tw-pr-32 { padding-right: var(--tw-space-32); }
+        
+        /* Padding - Bottom */
+        .tw-pb-0 { padding-bottom: var(--tw-space-0); }
+        .tw-pb-1 { padding-bottom: var(--tw-space-1); }
+        .tw-pb-2 { padding-bottom: var(--tw-space-2); }
+        .tw-pb-3 { padding-bottom: var(--tw-space-3); }
+        .tw-pb-4 { padding-bottom: var(--tw-space-4); }
+        .tw-pb-5 { padding-bottom: var(--tw-space-5); }
+        .tw-pb-6 { padding-bottom: var(--tw-space-6); }
+        .tw-pb-7 { padding-bottom: var(--tw-space-7); }
+        .tw-pb-8 { padding-bottom: var(--tw-space-8); }
+        .tw-pb-9 { padding-bottom: var(--tw-space-9); }
+        .tw-pb-10 { padding-bottom: var(--tw-space-10); }
+        .tw-pb-12 { padding-bottom: var(--tw-space-12); }
+        .tw-pb-16 { padding-bottom: var(--tw-space-16); }
+        .tw-pb-20 { padding-bottom: var(--tw-space-20); }
+        .tw-pb-24 { padding-bottom: var(--tw-space-24); }
+        .tw-pb-32 { padding-bottom: var(--tw-space-32); }
+        
+        /* Padding - Left */
+        .tw-pl-0 { padding-left: var(--tw-space-0); }
+        .tw-pl-1 { padding-left: var(--tw-space-1); }
+        .tw-pl-2 { padding-left: var(--tw-space-2); }
+        .tw-pl-3 { padding-left: var(--tw-space-3); }
+        .tw-pl-4 { padding-left: var(--tw-space-4); }
+        .tw-pl-5 { padding-left: var(--tw-space-5); }
+        .tw-pl-6 { padding-left: var(--tw-space-6); }
+        .tw-pl-7 { padding-left: var(--tw-space-7); }
+        .tw-pl-8 { padding-left: var(--tw-space-8); }
+        .tw-pl-9 { padding-left: var(--tw-space-9); }
+        .tw-pl-10 { padding-left: var(--tw-space-10); }
+        .tw-pl-12 { padding-left: var(--tw-space-12); }
+        .tw-pl-16 { padding-left: var(--tw-space-16); }
+        .tw-pl-20 { padding-left: var(--tw-space-20); }
+        .tw-pl-24 { padding-left: var(--tw-space-24); }
+        .tw-pl-32 { padding-left: var(--tw-space-32); }
+        
+        /* ========================================
+           SPACING HELPERS
+           ======================================== */
+        
+        /* Gap Utilities for Flexbox/Grid */
+        .tw-gap-0 { gap: var(--tw-space-0); }
+        .tw-gap-1 { gap: var(--tw-space-1); }
+        .tw-gap-2 { gap: var(--tw-space-2); }
+        .tw-gap-3 { gap: var(--tw-space-3); }
+        .tw-gap-4 { gap: var(--tw-space-4); }
+        .tw-gap-5 { gap: var(--tw-space-5); }
+        .tw-gap-6 { gap: var(--tw-space-6); }
+        .tw-gap-7 { gap: var(--tw-space-7); }
+        .tw-gap-8 { gap: var(--tw-space-8); }
+        .tw-gap-9 { gap: var(--tw-space-9); }
+        .tw-gap-10 { gap: var(--tw-space-10); }
+        .tw-gap-12 { gap: var(--tw-space-12); }
+        .tw-gap-16 { gap: var(--tw-space-16); }
+        .tw-gap-20 { gap: var(--tw-space-20); }
+        .tw-gap-24 { gap: var(--tw-space-24); }
+        
+        /* Gap X and Y */
+        .tw-gap-x-0 { column-gap: var(--tw-space-0); }
+        .tw-gap-x-1 { column-gap: var(--tw-space-1); }
+        .tw-gap-x-2 { column-gap: var(--tw-space-2); }
+        .tw-gap-x-3 { column-gap: var(--tw-space-3); }
+        .tw-gap-x-4 { column-gap: var(--tw-space-4); }
+        .tw-gap-x-5 { column-gap: var(--tw-space-5); }
+        .tw-gap-x-6 { column-gap: var(--tw-space-6); }
+        .tw-gap-x-8 { column-gap: var(--tw-space-8); }
+        .tw-gap-x-10 { column-gap: var(--tw-space-10); }
+        .tw-gap-x-12 { column-gap: var(--tw-space-12); }
+        
+        .tw-gap-y-0 { row-gap: var(--tw-space-0); }
+        .tw-gap-y-1 { row-gap: var(--tw-space-1); }
+        .tw-gap-y-2 { row-gap: var(--tw-space-2); }
+        .tw-gap-y-3 { row-gap: var(--tw-space-3); }
+        .tw-gap-y-4 { row-gap: var(--tw-space-4); }
+        .tw-gap-y-5 { row-gap: var(--tw-space-5); }
+        .tw-gap-y-6 { row-gap: var(--tw-space-6); }
+        .tw-gap-y-8 { row-gap: var(--tw-space-8); }
+        .tw-gap-y-10 { row-gap: var(--tw-space-10); }
+        .tw-gap-y-12 { row-gap: var(--tw-space-12); }
+        
+        /* Space Between Children (for lists, stacks) */
+        .tw-space-x-1 > * + * { margin-left: var(--tw-space-1); }
+        .tw-space-x-2 > * + * { margin-left: var(--tw-space-2); }
+        .tw-space-x-3 > * + * { margin-left: var(--tw-space-3); }
+        .tw-space-x-4 > * + * { margin-left: var(--tw-space-4); }
+        .tw-space-x-5 > * + * { margin-left: var(--tw-space-5); }
+        .tw-space-x-6 > * + * { margin-left: var(--tw-space-6); }
+        .tw-space-x-8 > * + * { margin-left: var(--tw-space-8); }
+        .tw-space-x-10 > * + * { margin-left: var(--tw-space-10); }
+        .tw-space-x-12 > * + * { margin-left: var(--tw-space-12); }
+        
+        .tw-space-y-1 > * + * { margin-top: var(--tw-space-1); }
+        .tw-space-y-2 > * + * { margin-top: var(--tw-space-2); }
+        .tw-space-y-3 > * + * { margin-top: var(--tw-space-3); }
+        .tw-space-y-4 > * + * { margin-top: var(--tw-space-4); }
+        .tw-space-y-5 > * + * { margin-top: var(--tw-space-5); }
+        .tw-space-y-6 > * + * { margin-top: var(--tw-space-6); }
+        .tw-space-y-8 > * + * { margin-top: var(--tw-space-8); }
+        .tw-space-y-10 > * + * { margin-top: var(--tw-space-10); }
+        .tw-space-y-12 > * + * { margin-top: var(--tw-space-12); }
+        
+        /* Responsive Spacing - Medium (768px+) */
+        @media (min-width: 768px) {
+            .tw-md-m-0 { margin: var(--tw-space-0); }
+            .tw-md-m-4 { margin: var(--tw-space-4); }
+            .tw-md-m-8 { margin: var(--tw-space-8); }
+            .tw-md-m-12 { margin: var(--tw-space-12); }
+            .tw-md-m-16 { margin: var(--tw-space-16); }
+            .tw-md-m-auto { margin: auto; }
+            
+            .tw-md-mx-0 { margin-left: var(--tw-space-0); margin-right: var(--tw-space-0); }
+            .tw-md-mx-4 { margin-left: var(--tw-space-4); margin-right: var(--tw-space-4); }
+            .tw-md-mx-8 { margin-left: var(--tw-space-8); margin-right: var(--tw-space-8); }
+            .tw-md-mx-auto { margin-left: auto; margin-right: auto; }
+            
+            .tw-md-my-0 { margin-top: var(--tw-space-0); margin-bottom: var(--tw-space-0); }
+            .tw-md-my-4 { margin-top: var(--tw-space-4); margin-bottom: var(--tw-space-4); }
+            .tw-md-my-8 { margin-top: var(--tw-space-8); margin-bottom: var(--tw-space-8); }
+            
+            .tw-md-mt-0 { margin-top: var(--tw-space-0); }
+            .tw-md-mt-4 { margin-top: var(--tw-space-4); }
+            .tw-md-mt-8 { margin-top: var(--tw-space-8); }
+            .tw-md-mt-12 { margin-top: var(--tw-space-12); }
+            .tw-md-mt-16 { margin-top: var(--tw-space-16); }
+            
+            .tw-md-p-0 { padding: var(--tw-space-0); }
+            .tw-md-p-4 { padding: var(--tw-space-4); }
+            .tw-md-p-8 { padding: var(--tw-space-8); }
+            .tw-md-p-12 { padding: var(--tw-space-12); }
+            .tw-md-p-16 { padding: var(--tw-space-16); }
+            
+            .tw-md-px-0 { padding-left: var(--tw-space-0); padding-right: var(--tw-space-0); }
+            .tw-md-px-4 { padding-left: var(--tw-space-4); padding-right: var(--tw-space-4); }
+            .tw-md-px-8 { padding-left: var(--tw-space-8); padding-right: var(--tw-space-8); }
+            
+            .tw-md-py-0 { padding-top: var(--tw-space-0); padding-bottom: var(--tw-space-0); }
+            .tw-md-py-4 { padding-top: var(--tw-space-4); padding-bottom: var(--tw-space-4); }
+            .tw-md-py-8 { padding-top: var(--tw-space-8); padding-bottom: var(--tw-space-8); }
+        }
+        
+        /* Responsive Spacing - Large (992px+) */
+        @media (min-width: 992px) {
+            .tw-lg-m-0 { margin: var(--tw-space-0); }
+            .tw-lg-m-4 { margin: var(--tw-space-4); }
+            .tw-lg-m-8 { margin: var(--tw-space-8); }
+            .tw-lg-m-12 { margin: var(--tw-space-12); }
+            .tw-lg-m-16 { margin: var(--tw-space-16); }
+            .tw-lg-m-auto { margin: auto; }
+            
+            .tw-lg-p-0 { padding: var(--tw-space-0); }
+            .tw-lg-p-4 { padding: var(--tw-space-4); }
+            .tw-lg-p-8 { padding: var(--tw-space-8); }
+            .tw-lg-p-12 { padding: var(--tw-space-12); }
+            .tw-lg-p-16 { padding: var(--tw-space-16); }
         }
 
         /* ========================================
@@ -929,7 +1392,7 @@
 <body>
     <div class="tw-container">
         <h1 class="tw-h1">Complete CSS Framework with TW Prefix</h1>
-        <p class="tw-lead">A modern CSS framework featuring a comprehensive reset, professional typography system, rich color palette, and flexible 12-column grid.</p>
+        <p class="tw-lead">A modern CSS framework featuring a comprehensive reset, professional typography system, rich color palette, spacing utilities, and flexible 12-column grid.</p>
         
         <div class="info-box">
             <strong>Framework Features:</strong> 
@@ -937,10 +1400,213 @@
                 <li>✓ Modern CSS Reset with box-sizing and smooth scrolling</li>
                 <li>✓ Typography system with Amulya (headings) and Synonym (body) fonts</li>
                 <li>✓ Complete color system with 7 brand colors, shades, and opacity variants</li>
+                <li>✓ Comprehensive spacing utilities (margin, padding, gap) with consistent scale</li>
                 <li>✓ Flexible 12-column grid with responsive breakpoints</li>
                 <li>✓ All classes use <code>tw-</code> prefix to avoid conflicts</li>
             </ul>
         </div>
+
+        <div class="section">
+            <h2 class="tw-h2">Spacing System</h2>
+            
+            <h3 class="tw-h3">Spacing Scale</h3>
+            <div class="tw-row tw-gap-2">
+                <div class="tw-col-12">
+                    <p class="tw-text-secondary tw-mb-4">Our spacing system uses a consistent scale based on 0.25rem (4px) increments:</p>
+                </div>
+                <div class="tw-col-6 tw-col-md-3" style="margin-bottom: 1rem;">
+                    <div class="tw-bg-white tw-border tw-border-ash tw-rounded tw-p-3">
+                        <code class="tw-text-sm">0</code> = 0px<br>
+                        <code class="tw-text-sm">1</code> = 4px<br>
+                        <code class="tw-text-sm">2</code> = 8px<br>
+                        <code class="tw-text-sm">3</code> = 12px<br>
+                        <code class="tw-text-sm">4</code> = 16px
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3" style="margin-bottom: 1rem;">
+                    <div class="tw-bg-white tw-border tw-border-ash tw-rounded tw-p-3">
+                        <code class="tw-text-sm">5</code> = 20px<br>
+                        <code class="tw-text-sm">6</code> = 24px<br>
+                        <code class="tw-text-sm">8</code> = 32px<br>
+                        <code class="tw-text-sm">10</code> = 40px<br>
+                        <code class="tw-text-sm">12</code> = 48px
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3" style="margin-bottom: 1rem;">
+                    <div class="tw-bg-white tw-border tw-border-ash tw-rounded tw-p-3">
+                        <code class="tw-text-sm">16</code> = 64px<br>
+                        <code class="tw-text-sm">20</code> = 80px<br>
+                        <code class="tw-text-sm">24</code> = 96px<br>
+                        <code class="tw-text-sm">32</code> = 128px<br>
+                        <code class="tw-text-sm">40</code> = 160px
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3" style="margin-bottom: 1rem;">
+                    <div class="tw-bg-white tw-border tw-border-ash tw-rounded tw-p-3">
+                        <code class="tw-text-sm">48</code> = 192px<br>
+                        <code class="tw-text-sm">56</code> = 224px<br>
+                        <code class="tw-text-sm">64</code> = 256px<br>
+                        <code class="tw-text-sm">72</code> = 288px<br>
+                        <code class="tw-text-sm">96</code> = 384px
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Padding Examples</h3>
+            <div class="tw-row tw-gap-4">
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-crimson tw-rounded">
+                        <div class="tw-p-2 tw-text-white">
+                            <code>tw-p-2</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-crimson tw-rounded">
+                        <div class="tw-p-4 tw-text-white">
+                            <code>tw-p-4</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-crimson tw-rounded">
+                        <div class="tw-p-6 tw-text-white">
+                            <code>tw-p-6</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-crimson tw-rounded">
+                        <div class="tw-p-8 tw-text-white">
+                            <code>tw-p-8</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tw-row tw-gap-4 tw-mt-4">
+                <div class="tw-col-md-6">
+                    <div class="tw-bg-stone tw-rounded">
+                        <div class="tw-px-8 tw-py-2 tw-text-white">
+                            <code>tw-px-8 tw-py-2</code> (horizontal/vertical)
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-col-md-6">
+                    <div class="tw-bg-stone tw-rounded">
+                        <div class="tw-pt-8 tw-pr-6 tw-pb-4 tw-pl-2 tw-text-white">
+                            <code>tw-pt-8 tw-pr-6 tw-pb-4 tw-pl-2</code> (individual)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Margin Examples</h3>
+            <div style="background: var(--tw-color-ash-light); padding: 1rem; border-radius: 8px;">
+                <div class="tw-bg-white tw-border tw-border-stone tw-rounded tw-p-3 tw-mb-2">
+                    <code>tw-mb-2</code> - Small margin bottom
+                </div>
+                <div class="tw-bg-white tw-border tw-border-stone tw-rounded tw-p-3 tw-mb-4">
+                    <code>tw-mb-4</code> - Medium margin bottom
+                </div>
+                <div class="tw-bg-white tw-border tw-border-stone tw-rounded tw-p-3 tw-mb-8">
+                    <code>tw-mb-8</code> - Large margin bottom
+                </div>
+                <div class="tw-bg-white tw-border tw-border-stone tw-rounded tw-p-3">
+                    Last item (no margin)
+                </div>
+            </div>
+            
+            <div class="tw-row tw-mt-6">
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Auto Margins</h4>
+                    <div class="tw-bg-ash tw-rounded tw-p-4">
+                        <div class="tw-bg-crimson tw-text-white tw-rounded tw-p-3 tw-mx-auto" style="width: 200px;">
+                            <code>tw-mx-auto</code> (centered)
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Directional Margins</h4>
+                    <div class="tw-bg-ash tw-rounded tw-p-4">
+                        <div class="tw-bg-charcoal tw-text-white tw-rounded tw-p-3 tw-ml-auto" style="width: 200px;">
+                            <code>tw-ml-auto</code> (push right)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Gap Utilities (Flexbox/Grid)</h3>
+            <div class="tw-row tw-gap-4">
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">tw-gap-2</h4>
+                    <div style="display: flex; gap: var(--tw-space-2);">
+                        <div class="tw-bg-crimson tw-text-white tw-p-3 tw-rounded" style="flex: 1;">Item</div>
+                        <div class="tw-bg-crimson tw-text-white tw-p-3 tw-rounded" style="flex: 1;">Item</div>
+                        <div class="tw-bg-crimson tw-text-white tw-p-3 tw-rounded" style="flex: 1;">Item</div>
+                    </div>
+                </div>
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">tw-gap-4</h4>
+                    <div style="display: flex; gap: var(--tw-space-4);">
+                        <div class="tw-bg-scarlet tw-text-white tw-p-3 tw-rounded" style="flex: 1;">Item</div>
+                        <div class="tw-bg-scarlet tw-text-white tw-p-3 tw-rounded" style="flex: 1;">Item</div>
+                        <div class="tw-bg-scarlet tw-text-white tw-p-3 tw-rounded" style="flex: 1;">Item</div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Space Between Children</h3>
+            <div class="tw-row">
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Horizontal Spacing</h4>
+                    <div class="tw-space-x-4" style="display: flex;">
+                        <button class="tw-bg-charcoal tw-text-white tw-px-4 tw-py-2 tw-rounded">Button 1</button>
+                        <button class="tw-bg-charcoal tw-text-white tw-px-4 tw-py-2 tw-rounded">Button 2</button>
+                        <button class="tw-bg-charcoal tw-text-white tw-px-4 tw-py-2 tw-rounded">Button 3</button>
+                    </div>
+                    <p class="tw-text-sm tw-text-secondary tw-mt-2"><code>tw-space-x-4</code> adds margin between children</p>
+                </div>
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Vertical Spacing</h4>
+                    <div class="tw-space-y-3">
+                        <div class="tw-bg-ash tw-p-3 tw-rounded">Item 1</div>
+                        <div class="tw-bg-ash tw-p-3 tw-rounded">Item 2</div>
+                        <div class="tw-bg-ash tw-p-3 tw-rounded">Item 3</div>
+                    </div>
+                    <p class="tw-text-sm tw-text-secondary tw-mt-2"><code>tw-space-y-3</code> adds margin between children</p>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Negative Margins</h3>
+            <div class="tw-bg-ash tw-p-8 tw-rounded">
+                <div class="tw-bg-white tw-border tw-border-stone tw-rounded tw-p-4 tw--mt-4 tw-mx-4">
+                    <code>tw--mt-4</code> - This box has negative top margin, pulling it upward
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Responsive Spacing</h3>
+            <div class="tw-bg-white tw-border tw-border-ash tw-rounded tw-p-4 tw-md-p-8 tw-lg-p-12">
+                <p class="tw-text-charcoal">This box has responsive padding:</p>
+                <ul class="tw-text-secondary tw-mt-2">
+                    <li>Mobile: <code>tw-p-4</code> (16px)</li>
+                    <li>Medium: <code>tw-md-p-8</code> (32px)</li>
+                    <li>Large: <code>tw-lg-p-12</code> (48px)</li>
+                </ul>
+                <p class="tw-text-sm tw-text-secondary tw-mt-4">Resize your browser to see the padding change!</p>
+            </div>
 
         <div class="section">
             <h2 class="tw-h2">Color System</h2>
@@ -1481,11 +2147,37 @@ greet('Developer');</code></pre>
                     <code class="tw-text-charcoal" style="display: block;">tw-font-[weight]</code>
                 </div>
                 <div>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Spacing - Margin</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-m-[0-96]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-mx/my-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-mt/mr/mb/ml-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw--m-[size] (negative)</code>
+                </div>
+                <div>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Spacing - Padding</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-p-[0-24]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-px/py-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-pt/pr/pb/pl-[size]</code>
+                </div>
+                <div>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Spacing - Gap</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-gap-[0-24]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-gap-x/y-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-space-x/y-[size]</code>
+                </div>
+                <div>
                     <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Responsive Classes</h3>
                     <code class="tw-text-charcoal" style="display: block;">tw-col-sm-[1-12]</code>
                     <code class="tw-text-charcoal" style="display: block;">tw-col-md-[1-12]</code>
                     <code class="tw-text-charcoal" style="display: block;">tw-col-lg-[1-12]</code>
                     <code class="tw-text-charcoal" style="display: block;">tw-col-xl-[1-12]</code>
+                </div>
+                <div>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Responsive Spacing</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-md-m-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-md-p-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-lg-m-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-lg-p-[size]</code>
                 </div>
                 <div>
                     <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Border & Radius</h3>
