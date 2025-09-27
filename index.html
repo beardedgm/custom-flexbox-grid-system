@@ -3,19 +3,629 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Flexbox Grid System with TW Prefix</title>
+    <title>TW Framework - Complete CSS Framework with Reset, Typography, Colors & Grid</title>
     <style>
-        * {
+        /* ========================================
+           CSS RESET & BASE
+           ======================================== */
+        
+        /* Box sizing rules */
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
+        }
+
+        /* Remove default margin and padding */
+        * {
             margin: 0;
             padding: 0;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            padding: 20px;
-            background: #f5f5f5;
+        /* Set core root defaults */
+        html {
+            font-size: 16px; /* Base font size for rem calculations */
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            scroll-behavior: smooth;
         }
+
+        /* Set core body defaults */
+        body {
+            min-height: 100vh;
+            text-rendering: optimizeSpeed;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Remove list styles on ul, ol elements with class */
+        ul[class],
+        ol[class] {
+            list-style: none;
+        }
+
+        /* A elements that don't have a class get default styles */
+        a:not([class]) {
+            text-decoration-skip-ink: auto;
+        }
+
+        /* Make images easier to work with */
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Inherit fonts for inputs and buttons */
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+            color: inherit;
+        }
+
+        /* Remove all animations and transitions for people that prefer not to see them */
+        @media (prefers-reduced-motion: reduce) {
+            html:focus-within {
+                scroll-behavior: auto;
+            }
+            
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ========================================
+           FONT FACE DECLARATIONS
+           ======================================== */
+        
+        /* Add your custom fonts here */
+        @font-face {
+            font-family: 'Amulya';
+            src: url('path-to-your-font/Amulya-Bold.woff2') format('woff2'),
+                 url('path-to-your-font/Amulya-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Synonym';
+            src: url('path-to-your-font/Synonym-Regular.woff2') format('woff2'),
+                 url('path-to-your-font/Synonym-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* ========================================
+           COLOR SYSTEM
+           ======================================== */
+        
+        /* CSS Variables for Colors */
+        :root {
+            /* Brand Colors */
+            --tw-color-black: #000000;
+            --tw-color-white: #FFFFFF;
+            --tw-color-charcoal: #333333;
+            --tw-color-stone: #6E6259;
+            --tw-color-ash: #D3D0CD;
+            --tw-color-crimson: #862633;
+            --tw-color-scarlet: #B94A48;
+            
+            /* Semantic Color Mappings */
+            --tw-color-primary: var(--tw-color-charcoal);
+            --tw-color-secondary: var(--tw-color-stone);
+            --tw-color-accent: var(--tw-color-crimson);
+            --tw-color-accent-light: var(--tw-color-scarlet);
+            --tw-color-muted: var(--tw-color-ash);
+            --tw-color-dark: var(--tw-color-black);
+            --tw-color-light: var(--tw-color-white);
+            
+            /* Opacity Variants */
+            --tw-color-black-90: rgba(0, 0, 0, 0.9);
+            --tw-color-black-75: rgba(0, 0, 0, 0.75);
+            --tw-color-black-50: rgba(0, 0, 0, 0.5);
+            --tw-color-black-25: rgba(0, 0, 0, 0.25);
+            --tw-color-black-10: rgba(0, 0, 0, 0.1);
+            --tw-color-black-5: rgba(0, 0, 0, 0.05);
+            
+            --tw-color-white-90: rgba(255, 255, 255, 0.9);
+            --tw-color-white-75: rgba(255, 255, 255, 0.75);
+            --tw-color-white-50: rgba(255, 255, 255, 0.5);
+            --tw-color-white-25: rgba(255, 255, 255, 0.25);
+            --tw-color-white-10: rgba(255, 255, 255, 0.1);
+            --tw-color-white-5: rgba(255, 255, 255, 0.05);
+            
+            /* Generated Shades */
+            --tw-color-charcoal-light: #4d4d4d;
+            --tw-color-charcoal-dark: #1a1a1a;
+            --tw-color-stone-light: #8a7f74;
+            --tw-color-stone-dark: #524843;
+            --tw-color-ash-light: #e8e6e4;
+            --tw-color-ash-dark: #beb9b4;
+            --tw-color-crimson-light: #a73845;
+            --tw-color-crimson-dark: #651e28;
+            --tw-color-scarlet-light: #cf6967;
+            --tw-color-scarlet-dark: #9c3533;
+            
+            /* State Colors */
+            --tw-color-success: #10b981;
+            --tw-color-warning: #f59e0b;
+            --tw-color-error: var(--tw-color-scarlet);
+            --tw-color-info: #3b82f6;
+        }
+
+        /* ========================================
+           TYPOGRAPHY SYSTEM
+           ======================================== */
+        
+        /* CSS Variables for Typography */
+        :root {
+            /* Font Families */
+            --tw-font-heading: 'Amulya', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --tw-font-body: 'Synonym', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --tw-font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            
+            /* Font Sizes - Perfect Fourth Scale (1.333) */
+            --tw-text-xs: 0.75rem;     /* 12px */
+            --tw-text-sm: 0.875rem;    /* 14px */
+            --tw-text-base: 1rem;      /* 16px */
+            --tw-text-lg: 1.125rem;    /* 18px */
+            --tw-text-xl: 1.333rem;    /* 21.33px */
+            --tw-text-2xl: 1.777rem;   /* 28.44px */
+            --tw-text-3xl: 2.369rem;   /* 37.90px */
+            --tw-text-4xl: 3.157rem;   /* 50.52px */
+            --tw-text-5xl: 4.209rem;   /* 67.34px */
+            
+            /* Line Heights */
+            --tw-leading-none: 1;
+            --tw-leading-tight: 1.25;
+            --tw-leading-snug: 1.375;
+            --tw-leading-normal: 1.5;
+            --tw-leading-relaxed: 1.625;
+            --tw-leading-loose: 2;
+            
+            /* Letter Spacing */
+            --tw-tracking-tighter: -0.05em;
+            --tw-tracking-tight: -0.025em;
+            --tw-tracking-normal: 0;
+            --tw-tracking-wide: 0.025em;
+            --tw-tracking-wider: 0.05em;
+            --tw-tracking-widest: 0.1em;
+            
+            /* Text Colors (using new color system) */
+            --tw-text-primary: var(--tw-color-charcoal);
+            --tw-text-secondary: var(--tw-color-stone);
+            --tw-text-tertiary: var(--tw-color-stone-light);
+            --tw-link-color: var(--tw-color-crimson);
+            --tw-link-hover: var(--tw-color-crimson-dark);
+        }
+
+        /* Base Typography */
+        body {
+            font-family: var(--tw-font-body);
+            font-size: var(--tw-text-base);
+            font-weight: 400;
+            line-height: var(--tw-leading-normal);
+            color: var(--tw-text-primary);
+            background: #ffffff;
+        }
+
+        /* Headings */
+        .tw-h1, .tw-h2, .tw-h3, .tw-h4, .tw-h5, .tw-h6,
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--tw-font-heading);
+            font-weight: 700;
+            line-height: var(--tw-leading-tight);
+            letter-spacing: var(--tw-tracking-tight);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            color: var(--tw-text-primary);
+        }
+
+        .tw-h1, h1 {
+            font-size: var(--tw-text-4xl);
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+        }
+
+        .tw-h2, h2 {
+            font-size: var(--tw-text-3xl);
+            line-height: 1.25;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tw-h3, h3 {
+            font-size: var(--tw-text-2xl);
+            line-height: 1.3;
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tw-h4, h4 {
+            font-size: var(--tw-text-xl);
+            line-height: 1.35;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tw-h5, h5 {
+            font-size: var(--tw-text-lg);
+            line-height: 1.4;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tw-h6, h6 {
+            font-size: var(--tw-text-base);
+            line-height: 1.4;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: var(--tw-tracking-wide);
+        }
+
+        /* Responsive Typography */
+        @media (min-width: 768px) {
+            .tw-h1, h1 { font-size: var(--tw-text-5xl); }
+            .tw-h2, h2 { font-size: var(--tw-text-4xl); }
+            .tw-h3, h3 { font-size: var(--tw-text-3xl); }
+            .tw-h4, h4 { font-size: var(--tw-text-2xl); }
+            .tw-h5, h5 { font-size: var(--tw-text-xl); }
+            .tw-h6, h6 { font-size: var(--tw-text-lg); }
+        }
+
+        /* Paragraphs */
+        .tw-p, p {
+            margin-bottom: 1rem;
+            line-height: var(--tw-leading-relaxed);
+        }
+
+        .tw-lead {
+            font-size: var(--tw-text-lg);
+            font-weight: 300;
+            line-height: var(--tw-leading-relaxed);
+            color: var(--tw-text-secondary);
+        }
+
+        /* Links */
+        .tw-link, a {
+            color: var(--tw-link-color);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+
+        .tw-link:hover, a:hover {
+            color: var(--tw-link-hover);
+        }
+
+        .tw-link-plain {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Lists */
+        .tw-ul, ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+
+        .tw-ol, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            list-style-type: decimal;
+        }
+
+        .tw-ul li, .tw-ol li, ul li, ol li {
+            margin-bottom: 0.25rem;
+            line-height: var(--tw-leading-relaxed);
+        }
+
+        .tw-ul ul, .tw-ol ol, ul ul, ol ol {
+            margin-top: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Blockquotes */
+        .tw-blockquote, blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--tw-color-crimson);
+            font-size: var(--tw-text-lg);
+            font-style: italic;
+            color: var(--tw-text-secondary);
+            background: var(--tw-color-ash-light);
+        }
+
+        .tw-blockquote cite, blockquote cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-size: var(--tw-text-sm);
+            font-style: normal;
+            color: var(--tw-text-tertiary);
+        }
+
+        /* Code */
+        .tw-code, code {
+            font-family: var(--tw-font-mono);
+            font-size: 0.875em;
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+            background-color: var(--tw-color-ash-light);
+            color: var(--tw-color-crimson);
+        }
+
+        .tw-pre, pre {
+            font-family: var(--tw-font-mono);
+            font-size: var(--tw-text-sm);
+            line-height: var(--tw-leading-relaxed);
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: var(--tw-color-charcoal);
+            color: var(--tw-color-white);
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .tw-pre code, pre code {
+            padding: 0;
+            background-color: transparent;
+            color: inherit;
+            font-size: inherit;
+        }
+
+        /* Horizontal Rules */
+        .tw-hr, hr {
+            margin: 2rem 0;
+            border: 0;
+            border-top: 1px solid var(--tw-color-ash);
+        }
+
+        /* Text Utilities */
+        .tw-text-xs { font-size: var(--tw-text-xs); }
+        .tw-text-sm { font-size: var(--tw-text-sm); }
+        .tw-text-base { font-size: var(--tw-text-base); }
+        .tw-text-lg { font-size: var(--tw-text-lg); }
+        .tw-text-xl { font-size: var(--tw-text-xl); }
+        .tw-text-2xl { font-size: var(--tw-text-2xl); }
+        .tw-text-3xl { font-size: var(--tw-text-3xl); }
+        .tw-text-4xl { font-size: var(--tw-text-4xl); }
+        .tw-text-5xl { font-size: var(--tw-text-5xl); }
+
+        /* Font Weight Utilities */
+        .tw-font-thin { font-weight: 100; }
+        .tw-font-light { font-weight: 300; }
+        .tw-font-normal { font-weight: 400; }
+        .tw-font-medium { font-weight: 500; }
+        .tw-font-semibold { font-weight: 600; }
+        .tw-font-bold { font-weight: 700; }
+        .tw-font-black { font-weight: 900; }
+
+        /* Line Height Utilities */
+        .tw-leading-none { line-height: var(--tw-leading-none); }
+        .tw-leading-tight { line-height: var(--tw-leading-tight); }
+        .tw-leading-snug { line-height: var(--tw-leading-snug); }
+        .tw-leading-normal { line-height: var(--tw-leading-normal); }
+        .tw-leading-relaxed { line-height: var(--tw-leading-relaxed); }
+        .tw-leading-loose { line-height: var(--tw-leading-loose); }
+
+        /* Letter Spacing Utilities */
+        .tw-tracking-tighter { letter-spacing: var(--tw-tracking-tighter); }
+        .tw-tracking-tight { letter-spacing: var(--tw-tracking-tight); }
+        .tw-tracking-normal { letter-spacing: var(--tw-tracking-normal); }
+        .tw-tracking-wide { letter-spacing: var(--tw-tracking-wide); }
+        .tw-tracking-wider { letter-spacing: var(--tw-tracking-wider); }
+        .tw-tracking-widest { letter-spacing: var(--tw-tracking-widest); }
+
+        /* Text Alignment */
+        .tw-text-left { text-align: left; }
+        .tw-text-center { text-align: center; }
+        .tw-text-right { text-align: right; }
+        .tw-text-justify { text-align: justify; }
+
+        /* Text Transform */
+        .tw-uppercase { text-transform: uppercase; }
+        .tw-lowercase { text-transform: lowercase; }
+        .tw-capitalize { text-transform: capitalize; }
+        .tw-normal-case { text-transform: none; }
+
+        /* Text Decoration */
+        .tw-underline { text-decoration: underline; }
+        .tw-line-through { text-decoration: line-through; }
+        .tw-no-underline { text-decoration: none; }
+
+        /* Text Color Utilities */
+        .tw-text-primary { color: var(--tw-text-primary); }
+        .tw-text-secondary { color: var(--tw-text-secondary); }
+        .tw-text-tertiary { color: var(--tw-text-tertiary); }
+        .tw-text-white { color: var(--tw-color-white); }
+        .tw-text-black { color: var(--tw-color-black); }
+        .tw-text-charcoal { color: var(--tw-color-charcoal); }
+        .tw-text-stone { color: var(--tw-color-stone); }
+        .tw-text-ash { color: var(--tw-color-ash); }
+        .tw-text-crimson { color: var(--tw-color-crimson); }
+        .tw-text-scarlet { color: var(--tw-color-scarlet); }
+        
+        /* Text Color Light/Dark Variants */
+        .tw-text-charcoal-light { color: var(--tw-color-charcoal-light); }
+        .tw-text-charcoal-dark { color: var(--tw-color-charcoal-dark); }
+        .tw-text-stone-light { color: var(--tw-color-stone-light); }
+        .tw-text-stone-dark { color: var(--tw-color-stone-dark); }
+        .tw-text-ash-light { color: var(--tw-color-ash-light); }
+        .tw-text-ash-dark { color: var(--tw-color-ash-dark); }
+        .tw-text-crimson-light { color: var(--tw-color-crimson-light); }
+        .tw-text-crimson-dark { color: var(--tw-color-crimson-dark); }
+        .tw-text-scarlet-light { color: var(--tw-color-scarlet-light); }
+        .tw-text-scarlet-dark { color: var(--tw-color-scarlet-dark); }
+        
+        /* State Text Colors */
+        .tw-text-success { color: var(--tw-color-success); }
+        .tw-text-warning { color: var(--tw-color-warning); }
+        .tw-text-error { color: var(--tw-color-error); }
+        .tw-text-info { color: var(--tw-color-info); }
+
+        /* Background Color Utilities */
+        .tw-bg-transparent { background-color: transparent; }
+        .tw-bg-current { background-color: currentColor; }
+        .tw-bg-white { background-color: var(--tw-color-white); }
+        .tw-bg-black { background-color: var(--tw-color-black); }
+        .tw-bg-charcoal { background-color: var(--tw-color-charcoal); }
+        .tw-bg-stone { background-color: var(--tw-color-stone); }
+        .tw-bg-ash { background-color: var(--tw-color-ash); }
+        .tw-bg-crimson { background-color: var(--tw-color-crimson); }
+        .tw-bg-scarlet { background-color: var(--tw-color-scarlet); }
+        
+        /* Background Light/Dark Variants */
+        .tw-bg-charcoal-light { background-color: var(--tw-color-charcoal-light); }
+        .tw-bg-charcoal-dark { background-color: var(--tw-color-charcoal-dark); }
+        .tw-bg-stone-light { background-color: var(--tw-color-stone-light); }
+        .tw-bg-stone-dark { background-color: var(--tw-color-stone-dark); }
+        .tw-bg-ash-light { background-color: var(--tw-color-ash-light); }
+        .tw-bg-ash-dark { background-color: var(--tw-color-ash-dark); }
+        .tw-bg-crimson-light { background-color: var(--tw-color-crimson-light); }
+        .tw-bg-crimson-dark { background-color: var(--tw-color-crimson-dark); }
+        .tw-bg-scarlet-light { background-color: var(--tw-color-scarlet-light); }
+        .tw-bg-scarlet-dark { background-color: var(--tw-color-scarlet-dark); }
+        
+        /* Background Opacity Variants */
+        .tw-bg-black-90 { background-color: var(--tw-color-black-90); }
+        .tw-bg-black-75 { background-color: var(--tw-color-black-75); }
+        .tw-bg-black-50 { background-color: var(--tw-color-black-50); }
+        .tw-bg-black-25 { background-color: var(--tw-color-black-25); }
+        .tw-bg-black-10 { background-color: var(--tw-color-black-10); }
+        .tw-bg-black-5 { background-color: var(--tw-color-black-5); }
+        
+        .tw-bg-white-90 { background-color: var(--tw-color-white-90); }
+        .tw-bg-white-75 { background-color: var(--tw-color-white-75); }
+        .tw-bg-white-50 { background-color: var(--tw-color-white-50); }
+        .tw-bg-white-25 { background-color: var(--tw-color-white-25); }
+        .tw-bg-white-10 { background-color: var(--tw-color-white-10); }
+        .tw-bg-white-5 { background-color: var(--tw-color-white-5); }
+        
+        /* State Background Colors */
+        .tw-bg-success { background-color: var(--tw-color-success); }
+        .tw-bg-warning { background-color: var(--tw-color-warning); }
+        .tw-bg-error { background-color: var(--tw-color-error); }
+        .tw-bg-info { background-color: var(--tw-color-info); }
+
+        /* Border Color Utilities */
+        .tw-border-transparent { border-color: transparent; }
+        .tw-border-current { border-color: currentColor; }
+        .tw-border-white { border-color: var(--tw-color-white); }
+        .tw-border-black { border-color: var(--tw-color-black); }
+        .tw-border-charcoal { border-color: var(--tw-color-charcoal); }
+        .tw-border-stone { border-color: var(--tw-color-stone); }
+        .tw-border-ash { border-color: var(--tw-color-ash); }
+        .tw-border-crimson { border-color: var(--tw-color-crimson); }
+        .tw-border-scarlet { border-color: var(--tw-color-scarlet); }
+        
+        /* Border Light/Dark Variants */
+        .tw-border-charcoal-light { border-color: var(--tw-color-charcoal-light); }
+        .tw-border-charcoal-dark { border-color: var(--tw-color-charcoal-dark); }
+        .tw-border-stone-light { border-color: var(--tw-color-stone-light); }
+        .tw-border-stone-dark { border-color: var(--tw-color-stone-dark); }
+        .tw-border-ash-light { border-color: var(--tw-color-ash-light); }
+        .tw-border-ash-dark { border-color: var(--tw-color-ash-dark); }
+        .tw-border-crimson-light { border-color: var(--tw-color-crimson-light); }
+        .tw-border-crimson-dark { border-color: var(--tw-color-crimson-dark); }
+        .tw-border-scarlet-light { border-color: var(--tw-color-scarlet-light); }
+        .tw-border-scarlet-dark { border-color: var(--tw-color-scarlet-dark); }
+        
+        /* Border Styles */
+        .tw-border { border-width: 1px; border-style: solid; }
+        .tw-border-0 { border-width: 0; }
+        .tw-border-2 { border-width: 2px; }
+        .tw-border-4 { border-width: 4px; }
+        .tw-border-8 { border-width: 8px; }
+        
+        .tw-border-t { border-top-width: 1px; border-top-style: solid; }
+        .tw-border-r { border-right-width: 1px; border-right-style: solid; }
+        .tw-border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+        .tw-border-l { border-left-width: 1px; border-left-style: solid; }
+        
+        .tw-border-solid { border-style: solid; }
+        .tw-border-dashed { border-style: dashed; }
+        .tw-border-dotted { border-style: dotted; }
+        .tw-border-none { border-style: none; }
+        
+        /* Border Radius */
+        .tw-rounded-none { border-radius: 0; }
+        .tw-rounded-sm { border-radius: 0.125rem; }
+        .tw-rounded { border-radius: 0.25rem; }
+        .tw-rounded-md { border-radius: 0.375rem; }
+        .tw-rounded-lg { border-radius: 0.5rem; }
+        .tw-rounded-xl { border-radius: 0.75rem; }
+        .tw-rounded-2xl { border-radius: 1rem; }
+        .tw-rounded-3xl { border-radius: 1.5rem; }
+        .tw-rounded-full { border-radius: 9999px; }
+        
+        /* Individual Corner Radius */
+        .tw-rounded-t { border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; }
+        .tw-rounded-r { border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; }
+        .tw-rounded-b { border-bottom-left-radius: 0.25rem; border-bottom-right-radius: 0.25rem; }
+        .tw-rounded-l { border-top-left-radius: 0.25rem; border-bottom-left-radius: 0.25rem; }
+        
+        /* Opacity Utilities */
+        .tw-opacity-0 { opacity: 0; }
+        .tw-opacity-5 { opacity: 0.05; }
+        .tw-opacity-10 { opacity: 0.1; }
+        .tw-opacity-25 { opacity: 0.25; }
+        .tw-opacity-50 { opacity: 0.5; }
+        .tw-opacity-75 { opacity: 0.75; }
+        .tw-opacity-90 { opacity: 0.9; }
+        .tw-opacity-100 { opacity: 1; }
+        
+        /* Hover State Utilities (for interactive elements) */
+        .tw-hover-opacity:hover { opacity: 0.8; }
+        .tw-hover-dim:hover { filter: brightness(0.9); }
+        .tw-hover-brighten:hover { filter: brightness(1.1); }
+        
+        /* Transition for smooth color changes */
+        .tw-transition-colors {
+            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Truncate */
+        .tw-truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Line Clamp */
+        .tw-line-clamp-2 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .tw-line-clamp-3 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+        }
+
+        /* ========================================
+           GRID SYSTEM (EXISTING)
+           ======================================== */
 
         /* Container */
         .tw-container {
@@ -252,7 +862,15 @@
             padding-left: 0;
         }
 
-        /* Demo styles */
+        /* ========================================
+           DEMO STYLES
+           ======================================== */
+        
+        /* Override body for demo */
+        body {
+            padding: 20px;
+            background: var(--tw-color-ash-light);
+        }
         .demo-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -276,16 +894,8 @@
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
-        h1, h2 {
-            color: #333;
-        }
-
-        h2 {
-            margin: 30px 0 20px;
-        }
-
         .section {
-            background: white;
+            background: var(--tw-color-white);
             padding: 30px;
             border-radius: 12px;
             margin-bottom: 30px;
@@ -293,35 +903,317 @@
         }
 
         .code-snippet {
-            background: #f8f9fa;
+            background: var(--tw-color-ash-light);
             padding: 15px;
             border-radius: 6px;
             font-family: 'Courier New', monospace;
             font-size: 14px;
             margin: 15px 0;
-            color: #495057;
+            color: var(--tw-color-charcoal);
             overflow-x: auto;
         }
 
         .info-box {
-            background: #e8f4ff;
-            border-left: 4px solid #007bff;
+            background: var(--tw-color-white);
+            border-left: 4px solid var(--tw-color-crimson);
             padding: 15px;
             margin: 20px 0;
             border-radius: 4px;
         }
 
         .info-box strong {
-            color: #004085;
+            color: var(--tw-color-charcoal);
         }
     </style>
 </head>
 <body>
     <div class="tw-container">
-        <h1>Custom Flexbox Grid System with TW Prefix</h1>
+        <h1 class="tw-h1">Complete CSS Framework with TW Prefix</h1>
+        <p class="tw-lead">A modern CSS framework featuring a comprehensive reset, professional typography system, rich color palette, and flexible 12-column grid.</p>
         
         <div class="info-box">
-            <strong>Namespace Safety:</strong> All classes use the <code>tw-</code> prefix to avoid conflicts with Bootstrap or other CSS frameworks. You can safely use this alongside existing grid systems.
+            <strong>Framework Features:</strong> 
+            <ul style="margin-top: 10px;">
+                <li>✓ Modern CSS Reset with box-sizing and smooth scrolling</li>
+                <li>✓ Typography system with Amulya (headings) and Synonym (body) fonts</li>
+                <li>✓ Complete color system with 7 brand colors, shades, and opacity variants</li>
+                <li>✓ Flexible 12-column grid with responsive breakpoints</li>
+                <li>✓ All classes use <code>tw-</code> prefix to avoid conflicts</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="tw-h2">Color System</h2>
+            
+            <h3 class="tw-h3">Brand Colors</h3>
+            <div class="tw-row">
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-black tw-rounded-lg" style="height: 120px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Black</p>
+                        <p class="tw-text-white-75 tw-text-sm">#000000</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-charcoal tw-rounded-lg" style="height: 120px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Charcoal</p>
+                        <p class="tw-text-white-75 tw-text-sm">#333333</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-stone tw-rounded-lg" style="height: 120px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Stone</p>
+                        <p class="tw-text-white-75 tw-text-sm">#6E6259</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-ash tw-rounded-lg" style="height: 120px; padding: 1rem;">
+                        <p class="tw-text-charcoal tw-font-semibold">Ash</p>
+                        <p class="tw-text-stone tw-text-sm">#D3D0CD</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-white tw-border tw-border-ash tw-rounded-lg" style="height: 120px; padding: 1rem;">
+                        <p class="tw-text-charcoal tw-font-semibold">White</p>
+                        <p class="tw-text-stone tw-text-sm">#FFFFFF</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-crimson tw-rounded-lg" style="height: 120px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Crimson</p>
+                        <p class="tw-text-white-75 tw-text-sm">#862633</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-scarlet tw-rounded-lg" style="height: 120px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Scarlet</p>
+                        <p class="tw-text-white-75 tw-text-sm">#B94A48</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Color Variations</h3>
+            <div class="tw-row">
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Light & Dark Shades</h4>
+                    <div style="display: flex; gap: 4px; margin-bottom: 1rem;">
+                        <div class="tw-bg-charcoal-dark" style="flex: 1; height: 60px; border-radius: 4px 0 0 4px;"></div>
+                        <div class="tw-bg-charcoal" style="flex: 1; height: 60px;"></div>
+                        <div class="tw-bg-charcoal-light" style="flex: 1; height: 60px; border-radius: 0 4px 4px 0;"></div>
+                    </div>
+                    <div style="display: flex; gap: 4px; margin-bottom: 1rem;">
+                        <div class="tw-bg-crimson-dark" style="flex: 1; height: 60px; border-radius: 4px 0 0 4px;"></div>
+                        <div class="tw-bg-crimson" style="flex: 1; height: 60px;"></div>
+                        <div class="tw-bg-crimson-light" style="flex: 1; height: 60px; border-radius: 0 4px 4px 0;"></div>
+                    </div>
+                </div>
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Opacity Variations</h4>
+                    <div style="position: relative; background: linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd), linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd); background-size: 10px 10px; background-position: 0 0, 5px 5px; padding: 1rem; border-radius: 8px;">
+                        <div style="display: flex; gap: 4px;">
+                            <div class="tw-bg-black-90" style="flex: 1; height: 60px; border-radius: 4px;"></div>
+                            <div class="tw-bg-black-75" style="flex: 1; height: 60px; border-radius: 4px;"></div>
+                            <div class="tw-bg-black-50" style="flex: 1; height: 60px; border-radius: 4px;"></div>
+                            <div class="tw-bg-black-25" style="flex: 1; height: 60px; border-radius: 4px;"></div>
+                            <div class="tw-bg-black-10" style="flex: 1; height: 60px; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Text Colors</h3>
+            <div class="tw-row">
+                <div class="tw-col-md-4">
+                    <p class="tw-text-black">Black text color</p>
+                    <p class="tw-text-charcoal">Charcoal text color</p>
+                    <p class="tw-text-stone">Stone text color</p>
+                    <p class="tw-text-ash">Ash text color</p>
+                </div>
+                <div class="tw-col-md-4">
+                    <p class="tw-text-crimson">Crimson text color</p>
+                    <p class="tw-text-scarlet">Scarlet text color</p>
+                    <p class="tw-text-primary">Primary text color</p>
+                    <p class="tw-text-secondary">Secondary text color</p>
+                </div>
+                <div class="tw-col-md-4">
+                    <div class="tw-bg-charcoal tw-rounded" style="padding: 0.5rem;">
+                        <p class="tw-text-white">White text on dark bg</p>
+                        <p class="tw-text-white-75">75% white text</p>
+                        <p class="tw-text-white-50">50% white text</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Borders & Radius</h3>
+            <div class="tw-row">
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-white tw-border tw-border-charcoal tw-rounded-none" style="padding: 1rem; text-align: center;">
+                        <p class="tw-text-sm">Square</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-white tw-border-2 tw-border-stone tw-rounded" style="padding: 1rem; text-align: center;">
+                        <p class="tw-text-sm">Rounded</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-white tw-border-4 tw-border-crimson tw-rounded-lg" style="padding: 1rem; text-align: center;">
+                        <p class="tw-text-sm">Large Radius</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-ash tw-border tw-border-dashed tw-border-stone tw-rounded-2xl" style="padding: 1rem; text-align: center;">
+                        <p class="tw-text-sm">Dashed</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">State Colors</h3>
+            <div class="tw-row">
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-success tw-rounded-lg" style="height: 80px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Success</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-warning tw-rounded-lg" style="height: 80px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Warning</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-error tw-rounded-lg" style="height: 80px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Error</p>
+                    </div>
+                </div>
+                <div class="tw-col-6 tw-col-md-3">
+                    <div class="tw-bg-info tw-rounded-lg" style="height: 80px; padding: 1rem;">
+                        <p class="tw-text-white tw-font-semibold">Info</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Interactive Effects</h3>
+            <div class="tw-row">
+                <div class="tw-col-md-4">
+                    <div class="tw-bg-crimson tw-rounded-lg tw-transition-colors tw-hover-opacity" style="padding: 1.5rem; text-align: center; cursor: pointer;">
+                        <p class="tw-text-white">Hover for Opacity</p>
+                    </div>
+                </div>
+                <div class="tw-col-md-4">
+                    <div class="tw-bg-charcoal tw-rounded-lg tw-transition-colors tw-hover-dim" style="padding: 1.5rem; text-align: center; cursor: pointer;">
+                        <p class="tw-text-white">Hover to Dim</p>
+                    </div>
+                </div>
+                <div class="tw-col-md-4">
+                    <div class="tw-bg-stone tw-rounded-lg tw-transition-colors tw-hover-brighten" style="padding: 1.5rem; text-align: center; cursor: pointer;">
+                        <p class="tw-text-white">Hover to Brighten</p>
+                    </div>
+                </div>
+            </div>
+
+        <div class="section">
+            <h2 class="tw-h2">Typography Examples</h2>
+            
+            <h3 class="tw-h3">Headings</h3>
+            <h1 class="tw-h1">Heading 1 - Amulya Bold</h1>
+            <h2 class="tw-h2">Heading 2 - Amulya Bold</h2>
+            <h3 class="tw-h3">Heading 3 - Amulya Bold</h3>
+            <h4 class="tw-h4">Heading 4 - Amulya Bold</h4>
+            <h5 class="tw-h5">Heading 5 - Amulya Bold</h5>
+            <h6 class="tw-h6">Heading 6 - Amulya Bold</h6>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Body Text</h3>
+            <p>This is a standard paragraph using Synonym Regular font. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <p class="tw-lead">This is a lead paragraph with larger, emphasized text. Perfect for introductions and important callouts that need extra attention.</p>
+            
+            <p>Regular paragraph with a <a href="#">link example</a> and some <strong>bold text</strong> and <em>italic text</em> for emphasis. You can also use <code>inline code</code> within text.</p>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Lists</h3>
+            <div class="tw-row">
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Unordered List</h4>
+                    <ul>
+                        <li>First item in the list</li>
+                        <li>Second item with sub-items
+                            <ul>
+                                <li>Nested item one</li>
+                                <li>Nested item two</li>
+                            </ul>
+                        </li>
+                        <li>Third item in the list</li>
+                    </ul>
+                </div>
+                <div class="tw-col-md-6">
+                    <h4 class="tw-h4">Ordered List</h4>
+                    <ol>
+                        <li>First step in the process</li>
+                        <li>Second step with details</li>
+                        <li>Third step to complete</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Blockquote</h3>
+            <blockquote class="tw-blockquote">
+                "Design is not just what it looks like and feels like. Design is how it works."
+                <cite>— Steve Jobs</cite>
+            </blockquote>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Code Blocks</h3>
+            <pre class="tw-pre"><code>// Example code block
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+    return `Welcome to our framework`;
+}
+
+greet('Developer');</code></pre>
+            
+            <hr class="tw-hr">
+            
+            <h3 class="tw-h3">Text Utilities</h3>
+            <div class="tw-row">
+                <div class="tw-col-md-4">
+                    <h5 class="tw-h5">Font Sizes</h5>
+                    <p class="tw-text-xs">Extra small text</p>
+                    <p class="tw-text-sm">Small text</p>
+                    <p class="tw-text-base">Base text size</p>
+                    <p class="tw-text-lg">Large text</p>
+                    <p class="tw-text-xl">Extra large text</p>
+                </div>
+                <div class="tw-col-md-4">
+                    <h5 class="tw-h5">Font Weights</h5>
+                    <p class="tw-font-light">Light weight text</p>
+                    <p class="tw-font-normal">Normal weight text</p>
+                    <p class="tw-font-medium">Medium weight text</p>
+                    <p class="tw-font-semibold">Semibold weight text</p>
+                    <p class="tw-font-bold">Bold weight text</p>
+                </div>
+                <div class="tw-col-md-4">
+                    <h5 class="tw-h5">Text Transform</h5>
+                    <p class="tw-uppercase">Uppercase text</p>
+                    <p class="tw-lowercase">LOWERCASE TEXT</p>
+                    <p class="tw-capitalize">capitalized text here</p>
+                    <p class="tw-truncate">This is a very long text that will be truncated with an ellipsis</p>
+                </div>
+            </div>
         </div>
 
         <div class="section">
@@ -424,7 +1316,7 @@
                     <div class="demo-box">Responsive 4</div>
                 </div>
             </div>
-            <p style="margin-top: 15px; color: #666;">Resize your browser to see the responsive behavior!</p>
+            <p class="tw-text-secondary" style="margin-top: 15px;">Resize your browser to see the responsive behavior!</p>
         </div>
 
         <div class="section">
@@ -511,7 +1403,7 @@
                     <div class="demo-box alt">Around</div>
                 </div>
             </div>
-            <div class="tw-row tw-align-items-center" style="height: 150px; background: #f8f9fa; border-radius: 8px;">
+            <div class="tw-row tw-align-items-center" style="height: 150px; background: var(--tw-color-ash-light); border-radius: 8px;">
                 <div class="tw-col-4">
                     <div class="demo-box alt2">Vertically</div>
                 </div>
@@ -566,42 +1458,60 @@
             <h2>Complete Class Reference</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
                 <div>
-                    <h3 style="color: #666; font-size: 16px; margin-bottom: 10px;">Container Classes</h3>
-                    <code style="display: block; color: #495057;">tw-container</code>
-                    <code style="display: block; color: #495057;">tw-container-fluid</code>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Container Classes</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-container</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-container-fluid</code>
                 </div>
                 <div>
-                    <h3 style="color: #666; font-size: 16px; margin-bottom: 10px;">Column Classes</h3>
-                    <code style="display: block; color: #495057;">tw-col-[1-12]</code>
-                    <code style="display: block; color: #495057;">tw-col</code>
-                    <code style="display: block; color: #495057;">tw-col-auto</code>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Column Classes</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-col-[1-12]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-col</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-col-auto</code>
                 </div>
                 <div>
-                    <h3 style="color: #666; font-size: 16px; margin-bottom: 10px;">Responsive Classes</h3>
-                    <code style="display: block; color: #495057;">tw-col-sm-[1-12]</code>
-                    <code style="display: block; color: #495057;">tw-col-md-[1-12]</code>
-                    <code style="display: block; color: #495057;">tw-col-lg-[1-12]</code>
-                    <code style="display: block; color: #495057;">tw-col-xl-[1-12]</code>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Color Classes</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-bg-[color]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-text-[color]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-border-[color]</code>
                 </div>
                 <div>
-                    <h3 style="color: #666; font-size: 16px; margin-bottom: 10px;">Offset Classes</h3>
-                    <code style="display: block; color: #495057;">tw-offset-[1-11]</code>
-                    <code style="display: block; color: #495057;">tw-offset-sm-[0-11]</code>
-                    <code style="display: block; color: #495057;">tw-offset-md-[0-11]</code>
-                    <code style="display: block; color: #495057;">tw-offset-lg-[0-11]</code>
-                    <code style="display: block; color: #495057;">tw-offset-xl-[0-11]</code>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Typography</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-h[1-6]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-text-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-font-[weight]</code>
                 </div>
                 <div>
-                    <h3 style="color: #666; font-size: 16px; margin-bottom: 10px;">Alignment Classes</h3>
-                    <code style="display: block; color: #495057;">tw-justify-content-*</code>
-                    <code style="display: block; color: #495057;">tw-align-items-*</code>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Responsive Classes</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-col-sm-[1-12]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-col-md-[1-12]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-col-lg-[1-12]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-col-xl-[1-12]</code>
                 </div>
                 <div>
-                    <h3 style="color: #666; font-size: 16px; margin-bottom: 10px;">Order & Utility</h3>
-                    <code style="display: block; color: #495057;">tw-order-[0-12]</code>
-                    <code style="display: block; color: #495057;">tw-order-first</code>
-                    <code style="display: block; color: #495057;">tw-order-last</code>
-                    <code style="display: block; color: #495057;">tw-no-gutters</code>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Border & Radius</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-border</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-rounded-[size]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-opacity-[value]</code>
+                </div>
+                <div>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Offset Classes</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-offset-[1-11]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-offset-sm-[0-11]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-offset-md-[0-11]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-offset-lg-[0-11]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-offset-xl-[0-11]</code>
+                </div>
+                <div>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Alignment Classes</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-justify-content-*</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-align-items-*</code>
+                </div>
+                <div>
+                    <h3 class="tw-text-secondary tw-text-base" style="margin-bottom: 10px;">Order & Utility</h3>
+                    <code class="tw-text-charcoal" style="display: block;">tw-order-[0-12]</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-order-first</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-order-last</code>
+                    <code class="tw-text-charcoal" style="display: block;">tw-no-gutters</code>
                 </div>
             </div>
         </div>
