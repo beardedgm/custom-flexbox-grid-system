@@ -8,7 +8,7 @@ body {
     background: var(--tw-color-ash-light);
 }
 .demo-box {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--tw-color-ash-light);
     color: white;
     padding: 20px;
     text-align: center;
@@ -23,9 +23,9 @@ body {
 }
 
 .demo-box.alt {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: var(--tw-color-ash-light);
 }
 
 .demo-box.alt2 {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: var(--tw-color-ash-light);
 }
