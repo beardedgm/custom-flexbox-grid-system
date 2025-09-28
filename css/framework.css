@@ -123,6 +123,7 @@ select {
     --tw-space-72: 18rem;    /* 288px */
     --tw-space-80: 20rem;    /* 320px */
     --tw-space-96: 24rem;    /* 384px */
+    --tw-gutter: var(--tw-space-4);
 }
 
 /* ========================================
@@ -1562,25 +1563,25 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 var(--tw-gutter);
 }
 
 .tw-container-fluid {
     width: 100%;
-    padding: 0 15px;
+    padding: 0 var(--tw-gutter);
 }
 
 /* Row */
 .tw-row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: calc(var(--tw-gutter) * -1);
+    margin-right: calc(var(--tw-gutter) * -1);
 }
 
 /* Base column styles */
 [class*="tw-col-"] {
-    padding: 0 15px;
+    padding: 0 var(--tw-gutter);
     position: relative;
     width: 100%;
 }
