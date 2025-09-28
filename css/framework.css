@@ -2,7 +2,7 @@
    FONT FACE DECLARATIONS
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&family=Roboto+Mono:wght@100..700&display=swap');
 
 /* ========================================
    CSS RESET & BASE
@@ -182,9 +182,9 @@ select {
     --tw-shadow-focus: 0 0 0 3px var(--tw-color-crimson-light);
 
     /* Typography System */
-    --tw-font-heading: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --tw-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --tw-font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --tw-font-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    --tw-font-mono: 'Roboto Mono', 'SF Mono', 'Segoe UI Mono', 'Cascadia Code', Menlo, Consolas, 'Courier New', monospace;
 
     --tw-text-xs: 0.75rem;     /* 12px */
     --tw-text-sm: 0.875rem;    /* 14px */
