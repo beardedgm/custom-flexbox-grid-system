@@ -1757,28 +1757,36 @@ a.tw-btn,
     color: var(--tw-color-primary);
 }
 
-.tw-btn-xs {
+.tw-btn-xs,
+button.tw-btn-xs,
+a.tw-btn-xs {
     padding: var(--tw-space-1) var(--tw-space-2);
     gap: var(--tw-space-1);
     font-size: var(--tw-text-xs);
     line-height: 1.15;
 }
 
-.tw-btn-sm {
+.tw-btn-sm,
+button.tw-btn-sm,
+a.tw-btn-sm {
     padding: var(--tw-space-2) var(--tw-space-3);
     gap: var(--tw-space-1);
     font-size: var(--tw-text-sm);
     line-height: 1.2;
 }
 
-.tw-btn-lg {
+.tw-btn-lg,
+button.tw-btn-lg,
+a.tw-btn-lg {
     padding: var(--tw-space-3) var(--tw-space-5);
     gap: var(--tw-space-3);
     font-size: var(--tw-text-lg);
     line-height: 1.35;
 }
 
-.tw-btn-xl {
+.tw-btn-xl,
+button.tw-btn-xl,
+a.tw-btn-xl {
     padding: var(--tw-space-4) var(--tw-space-6);
     gap: var(--tw-space-4);
     font-size: var(--tw-text-xl);
