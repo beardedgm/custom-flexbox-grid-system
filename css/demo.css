@@ -5,10 +5,10 @@
 /* Override body for demo */
 body {
     padding: 20px;
-    background: var(--tw-color-ash-light);
+    background: var(--tw-color-charcoal-light);
 }
 .demo-box {
-    background: var(--tw-color-ash-light);
+    background: var(--tw-color-charcoal-light);
     color: white;
     padding: 20px;
     text-align: center;
@@ -23,9 +23,9 @@ body {
 }
 
 .demo-box.alt {
-    background: var(--tw-color-ash-light);
+    background: var(--tw-color-charcoal-light);
 }
 
 .demo-box.alt2 {
-    background: var(--tw-color-ash-light);
+    background: var(--tw-color-charcoal-light);
 }
