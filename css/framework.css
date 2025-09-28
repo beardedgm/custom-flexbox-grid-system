@@ -124,19 +124,102 @@ select {
     --tw-space-80: 20rem;    /* 320px */
     --tw-space-96: 24rem;    /* 384px */
     --tw-gutter: var(--tw-space-4);
-}
 
-/* ========================================
-   RADIUS UTILITIES
-   ======================================== */
-
-:root {
+    /* Radius Utilities */
     --tw-radius-sm: 0.125rem;
     --tw-radius-md: 0.375rem;
     --tw-radius-lg: 0.5rem;
     --tw-radius-xl: 0.75rem;
     --tw-radius-full: 9999px;
+
+    /* Color System */
+    --tw-color-black: #000000;
+    --tw-color-white: #FFFFFF;
+    --tw-color-charcoal: #333333;
+    --tw-color-stone: #6E6259;
+    --tw-color-ash: #D3D0CD;
+    --tw-color-crimson: #862633;
+    --tw-color-scarlet: #B94A48;
+
+    --tw-color-primary: var(--tw-color-charcoal);
+    --tw-color-secondary: var(--tw-color-stone);
+    --tw-color-accent: var(--tw-color-crimson);
+    --tw-color-accent-light: var(--tw-color-scarlet);
+    --tw-color-muted: var(--tw-color-ash);
+    --tw-color-dark: var(--tw-color-black);
+    --tw-color-light: var(--tw-color-white);
+
+    --tw-color-black-90: rgba(0, 0, 0, 0.9);
+    --tw-color-black-75: rgba(0, 0, 0, 0.75);
+    --tw-color-black-50: rgba(0, 0, 0, 0.5);
+    --tw-color-black-25: rgba(0, 0, 0, 0.25);
+    --tw-color-black-10: rgba(0, 0, 0, 0.1);
+    --tw-color-black-5: rgba(0, 0, 0, 0.05);
+
+    --tw-color-white-90: rgba(255, 255, 255, 0.9);
+    --tw-color-white-75: rgba(255, 255, 255, 0.75);
+    --tw-color-white-50: rgba(255, 255, 255, 0.5);
+    --tw-color-white-25: rgba(255, 255, 255, 0.25);
+    --tw-color-white-10: rgba(255, 255, 255, 0.1);
+    --tw-color-white-5: rgba(255, 255, 255, 0.05);
+
+    --tw-color-charcoal-light: #4d4d4d;
+    --tw-color-charcoal-dark: #1a1a1a;
+    --tw-color-stone-light: #8a7f74;
+    --tw-color-stone-dark: #524843;
+    --tw-color-ash-light: #e8e6e4;
+    --tw-color-ash-dark: #beb9b4;
+    --tw-color-crimson-light: #a73845;
+    --tw-color-crimson-dark: #651e28;
+    --tw-color-scarlet-light: #cf6967;
+    --tw-color-scarlet-dark: #9c3533;
+
+    --tw-color-success: #10b981;
+    --tw-color-warning: #f59e0b;
+    --tw-color-error: var(--tw-color-scarlet);
+    --tw-color-info: #3b82f6;
+
+    --tw-shadow-focus: 0 0 0 3px var(--tw-color-crimson-light);
+
+    /* Typography System */
+    --tw-font-heading: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --tw-font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --tw-font-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+    --tw-text-xs: 0.75rem;     /* 12px */
+    --tw-text-sm: 0.875rem;    /* 14px */
+    --tw-text-base: 1rem;      /* 16px */
+    --tw-text-lg: 1.125rem;    /* 18px */
+    --tw-text-xl: 1.333rem;    /* 21.33px */
+    --tw-text-2xl: 1.777rem;   /* 28.44px */
+    --tw-text-3xl: 2.369rem;   /* 37.90px */
+    --tw-text-4xl: 3.157rem;   /* 50.52px */
+    --tw-text-5xl: 4.209rem;   /* 67.34px */
+
+    --tw-leading-none: 1;
+    --tw-leading-tight: 1.25;
+    --tw-leading-snug: 1.375;
+    --tw-leading-normal: 1.5;
+    --tw-leading-relaxed: 1.625;
+    --tw-leading-loose: 2;
+
+    --tw-tracking-tighter: -0.05em;
+    --tw-tracking-tight: -0.025em;
+    --tw-tracking-normal: 0;
+    --tw-tracking-wide: 0.025em;
+    --tw-tracking-wider: 0.05em;
+    --tw-tracking-widest: 0.1em;
+
+    --tw-text-primary: var(--tw-color-charcoal);
+    --tw-text-secondary: var(--tw-color-stone);
+    --tw-text-tertiary: var(--tw-color-stone-light);
+    --tw-link-color: var(--tw-color-crimson);
+    --tw-link-hover: var(--tw-color-crimson-dark);
 }
+
+/* ========================================
+   RADIUS UTILITIES
+   ======================================== */
 
 /* ========================================
    MARGIN UTILITIES
@@ -1042,107 +1125,12 @@ select {
    ======================================== */
 
 /* CSS Variables for Colors */
-:root {
-    /* Brand Colors */
-    --tw-color-black: #000000;
-    --tw-color-white: #FFFFFF;
-    --tw-color-charcoal: #333333;
-    --tw-color-stone: #6E6259;
-    --tw-color-ash: #D3D0CD;
-    --tw-color-crimson: #862633;
-    --tw-color-scarlet: #B94A48;
-    
-    /* Semantic Color Mappings */
-    --tw-color-primary: var(--tw-color-charcoal);
-    --tw-color-secondary: var(--tw-color-stone);
-    --tw-color-accent: var(--tw-color-crimson);
-    --tw-color-accent-light: var(--tw-color-scarlet);
-    --tw-color-muted: var(--tw-color-ash);
-    --tw-color-dark: var(--tw-color-black);
-    --tw-color-light: var(--tw-color-white);
-    
-    /* Opacity Variants */
-    --tw-color-black-90: rgba(0, 0, 0, 0.9);
-    --tw-color-black-75: rgba(0, 0, 0, 0.75);
-    --tw-color-black-50: rgba(0, 0, 0, 0.5);
-    --tw-color-black-25: rgba(0, 0, 0, 0.25);
-    --tw-color-black-10: rgba(0, 0, 0, 0.1);
-    --tw-color-black-5: rgba(0, 0, 0, 0.05);
-    
-    --tw-color-white-90: rgba(255, 255, 255, 0.9);
-    --tw-color-white-75: rgba(255, 255, 255, 0.75);
-    --tw-color-white-50: rgba(255, 255, 255, 0.5);
-    --tw-color-white-25: rgba(255, 255, 255, 0.25);
-    --tw-color-white-10: rgba(255, 255, 255, 0.1);
-    --tw-color-white-5: rgba(255, 255, 255, 0.05);
-    
-    /* Generated Shades */
-    --tw-color-charcoal-light: #4d4d4d;
-    --tw-color-charcoal-dark: #1a1a1a;
-    --tw-color-stone-light: #8a7f74;
-    --tw-color-stone-dark: #524843;
-    --tw-color-ash-light: #e8e6e4;
-    --tw-color-ash-dark: #beb9b4;
-    --tw-color-crimson-light: #a73845;
-    --tw-color-crimson-dark: #651e28;
-    --tw-color-scarlet-light: #cf6967;
-    --tw-color-scarlet-dark: #9c3533;
-    
-    /* State Colors */
-    --tw-color-success: #10b981;
-    --tw-color-warning: #f59e0b;
-    --tw-color-error: var(--tw-color-scarlet);
-    --tw-color-info: #3b82f6;
-
-    /* Component Tokens */
-    --tw-shadow-focus: 0 0 0 3px var(--tw-color-crimson-light);
-}
 
 /* ========================================
    TYPOGRAPHY SYSTEM
    ======================================== */
 
 /* CSS Variables for Typography */
-:root {
-    /* Font Families */
-    --tw-font-heading: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --tw-font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --tw-font-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-    
-    /* Font Sizes - Perfect Fourth Scale (1.333) */
-    --tw-text-xs: 0.75rem;     /* 12px */
-    --tw-text-sm: 0.875rem;    /* 14px */
-    --tw-text-base: 1rem;      /* 16px */
-    --tw-text-lg: 1.125rem;    /* 18px */
-    --tw-text-xl: 1.333rem;    /* 21.33px */
-    --tw-text-2xl: 1.777rem;   /* 28.44px */
-    --tw-text-3xl: 2.369rem;   /* 37.90px */
-    --tw-text-4xl: 3.157rem;   /* 50.52px */
-    --tw-text-5xl: 4.209rem;   /* 67.34px */
-    
-    /* Line Heights */
-    --tw-leading-none: 1;
-    --tw-leading-tight: 1.25;
-    --tw-leading-snug: 1.375;
-    --tw-leading-normal: 1.5;
-    --tw-leading-relaxed: 1.625;
-    --tw-leading-loose: 2;
-    
-    /* Letter Spacing */
-    --tw-tracking-tighter: -0.05em;
-    --tw-tracking-tight: -0.025em;
-    --tw-tracking-normal: 0;
-    --tw-tracking-wide: 0.025em;
-    --tw-tracking-wider: 0.05em;
-    --tw-tracking-widest: 0.1em;
-    
-    /* Text Colors (using new color system) */
-    --tw-text-primary: var(--tw-color-charcoal);
-    --tw-text-secondary: var(--tw-color-stone);
-    --tw-text-tertiary: var(--tw-color-stone-light);
-    --tw-link-color: var(--tw-color-crimson);
-    --tw-link-hover: var(--tw-color-crimson-dark);
-}
 
 /* Base Typography */
 body {
