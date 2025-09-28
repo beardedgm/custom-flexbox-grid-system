@@ -1051,6 +1051,9 @@
             --tw-color-warning: #f59e0b;
             --tw-color-error: var(--tw-color-scarlet);
             --tw-color-info: #3b82f6;
+
+            /* Component Tokens */
+            --tw-shadow-focus: 0 0 0 3px var(--tw-color-crimson-light);
         }
 
         /* ========================================
@@ -1779,6 +1782,240 @@
 
         .demo-box.alt2 {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        /* ========================================
+           BUTTON COMPONENTS
+           ======================================== */
+
+        .tw-btn,
+        button.tw-btn,
+        a.tw-btn,
+        .tw-btn[type="button"],
+        .tw-btn[type="submit"],
+        .tw-btn[type="reset"],
+        .tw-btn[role="button"] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--tw-space-2);
+            padding: var(--tw-space-2) var(--tw-space-4);
+            font-weight: 600;
+            line-height: 1.25;
+            border-radius: 0.375rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+            background-color: var(--tw-color-light);
+            color: var(--tw-color-primary);
+        }
+
+        .tw-btn:focus-visible,
+        button.tw-btn:focus-visible,
+        a.tw-btn:focus-visible {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: var(--tw-shadow-focus);
+        }
+
+        .tw-btn:hover,
+        button.tw-btn:hover,
+        a.tw-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .tw-btn:active,
+        button.tw-btn:active,
+        a.tw-btn:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .tw-btn[disabled],
+        .tw-btn:disabled,
+        button.tw-btn[disabled],
+        button.tw-btn:disabled,
+        a.tw-btn[aria-disabled="true"] {
+            cursor: not-allowed;
+            opacity: 0.6;
+            box-shadow: none;
+            transform: none;
+            pointer-events: none;
+        }
+
+        .tw-btn[disabled]:focus-visible,
+        .tw-btn:disabled:focus-visible,
+        button.tw-btn[disabled]:focus-visible,
+        button.tw-btn:disabled:focus-visible,
+        a.tw-btn[aria-disabled="true"]:focus-visible {
+            box-shadow: none;
+        }
+
+        .tw-btn-primary,
+        button.tw-btn-primary,
+        a.tw-btn-primary {
+            background-color: var(--tw-color-primary);
+            border-color: var(--tw-color-primary);
+            color: var(--tw-color-light);
+        }
+
+        .tw-btn-primary:hover,
+        button.tw-btn-primary:hover,
+        a.tw-btn-primary:hover {
+            background-color: var(--tw-color-charcoal-dark);
+            border-color: var(--tw-color-charcoal-dark);
+        }
+
+        .tw-btn-primary:focus-visible,
+        button.tw-btn-primary:focus-visible,
+        a.tw-btn-primary:focus-visible {
+            box-shadow: var(--tw-shadow-focus);
+        }
+
+        .tw-btn-primary:active,
+        button.tw-btn-primary:active,
+        a.tw-btn-primary:active {
+            background-color: var(--tw-color-charcoal-dark);
+            border-color: var(--tw-color-charcoal-dark);
+        }
+
+        .tw-btn-primary[disabled],
+        .tw-btn-primary:disabled,
+        button.tw-btn-primary[disabled],
+        button.tw-btn-primary:disabled,
+        a.tw-btn-primary[aria-disabled="true"] {
+            background-color: var(--tw-color-charcoal-light);
+            border-color: var(--tw-color-charcoal-light);
+            color: var(--tw-color-white-75);
+        }
+
+        .tw-btn-secondary,
+        button.tw-btn-secondary,
+        a.tw-btn-secondary {
+            background-color: var(--tw-color-secondary);
+            border-color: var(--tw-color-secondary);
+            color: var(--tw-color-light);
+        }
+
+        .tw-btn-secondary:hover,
+        button.tw-btn-secondary:hover,
+        a.tw-btn-secondary:hover {
+            background-color: var(--tw-color-stone-dark);
+            border-color: var(--tw-color-stone-dark);
+        }
+
+        .tw-btn-secondary:active,
+        button.tw-btn-secondary:active,
+        a.tw-btn-secondary:active {
+            background-color: var(--tw-color-stone-dark);
+            border-color: var(--tw-color-stone-dark);
+        }
+
+        .tw-btn-secondary[disabled],
+        .tw-btn-secondary:disabled,
+        button.tw-btn-secondary[disabled],
+        button.tw-btn-secondary:disabled,
+        a.tw-btn-secondary[aria-disabled="true"] {
+            background-color: var(--tw-color-stone-light);
+            border-color: var(--tw-color-stone-light);
+            color: var(--tw-color-white-90);
+        }
+
+        .tw-btn-accent,
+        button.tw-btn-accent,
+        a.tw-btn-accent {
+            background-color: var(--tw-color-accent);
+            border-color: var(--tw-color-accent);
+            color: var(--tw-color-light);
+        }
+
+        .tw-btn-accent:hover,
+        button.tw-btn-accent:hover,
+        a.tw-btn-accent:hover {
+            background-color: var(--tw-color-crimson-dark);
+            border-color: var(--tw-color-crimson-dark);
+        }
+
+        .tw-btn-accent:active,
+        button.tw-btn-accent:active,
+        a.tw-btn-accent:active {
+            background-color: var(--tw-color-crimson-dark);
+            border-color: var(--tw-color-crimson-dark);
+        }
+
+        .tw-btn-accent[disabled],
+        .tw-btn-accent:disabled,
+        button.tw-btn-accent[disabled],
+        button.tw-btn-accent:disabled,
+        a.tw-btn-accent[aria-disabled="true"] {
+            background-color: var(--tw-color-crimson-light);
+            border-color: var(--tw-color-crimson-light);
+            color: var(--tw-color-white-90);
+        }
+
+        .tw-btn-outline,
+        button.tw-btn-outline,
+        a.tw-btn-outline {
+            background-color: transparent;
+            border-color: var(--tw-color-primary);
+            color: var(--tw-color-primary);
+        }
+
+        .tw-btn-outline:hover,
+        button.tw-btn-outline:hover,
+        a.tw-btn-outline:hover {
+            background-color: var(--tw-color-charcoal);
+            color: var(--tw-color-light);
+            border-color: var(--tw-color-charcoal);
+        }
+
+        .tw-btn-outline:active,
+        button.tw-btn-outline:active,
+        a.tw-btn-outline:active {
+            background-color: var(--tw-color-charcoal-dark);
+            border-color: var(--tw-color-charcoal-dark);
+        }
+
+        .tw-btn-outline[disabled],
+        .tw-btn-outline:disabled,
+        button.tw-btn-outline[disabled],
+        button.tw-btn-outline:disabled,
+        a.tw-btn-outline[aria-disabled="true"] {
+            background-color: transparent;
+            border-color: var(--tw-color-charcoal-light);
+            color: var(--tw-color-charcoal-light);
+        }
+
+        .tw-btn-ghost,
+        button.tw-btn-ghost,
+        a.tw-btn-ghost {
+            background-color: transparent;
+            border-color: transparent;
+            color: var(--tw-color-primary);
+        }
+
+        .tw-btn-ghost:hover,
+        button.tw-btn-ghost:hover,
+        a.tw-btn-ghost:hover {
+            background-color: var(--tw-color-black-5);
+            border-color: transparent;
+        }
+
+        .tw-btn-ghost:active,
+        button.tw-btn-ghost:active,
+        a.tw-btn-ghost:active {
+            background-color: var(--tw-color-black-10);
+            border-color: transparent;
+        }
+
+        .tw-btn-ghost[disabled],
+        .tw-btn-ghost:disabled,
+        button.tw-btn-ghost[disabled],
+        button.tw-btn-ghost:disabled,
+        a.tw-btn-ghost[aria-disabled="true"] {
+            background-color: transparent;
+            color: var(--tw-color-black-25);
         }
 
         .section {
