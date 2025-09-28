@@ -1089,8 +1089,8 @@ body {
 }
 
 /* Headings */
-.tw-h1, .tw-h2, .tw-h3, .tw-h4, .tw-h5, .tw-h6,
-h1, h2, h3, h4, h5, h6 {
+:is(.tw-h1, .tw-h2, .tw-h3, .tw-h4, .tw-h5, .tw-h6),
+:is(h1, h2, h3, h4, h5, h6) {
     font-family: var(--tw-font-heading);
     font-weight: 700;
     line-height: var(--tw-leading-tight);
@@ -1685,37 +1685,30 @@ h1, h2, h3, h4, h5, h6 {
     .tw-offset-xl-11 { margin-left: 91.666667%; }
 }
 
-/* Alignment utilities (legacy - kept for backward compatibility) */
-/* Note: Prefer tw-justify-* and tw-items-* for flexbox layouts */
-.tw-justify-content-start { justify-content: flex-start !important; }
-.tw-justify-content-end { justify-content: flex-end !important; }
-.tw-justify-content-center { justify-content: center !important; }
-.tw-justify-content-between { justify-content: space-between !important; }
-.tw-justify-content-around { justify-content: space-around !important; }
-.tw-justify-content-evenly { justify-content: space-evenly !important; }
-
-.tw-align-items-start { align-items: flex-start !important; }
-.tw-align-items-end { align-items: flex-end !important; }
-.tw-align-items-center { align-items: center !important; }
-.tw-align-items-baseline { align-items: baseline !important; }
-.tw-align-items-stretch { align-items: stretch !important; }
+/* Legacy vertical alignment utilities (kept for backward compatibility). */
+/* Note: Prefer tw-items-* for new flexbox layouts. */
+.tw-align-items-start { align-items: flex-start; }
+.tw-align-items-end { align-items: flex-end; }
+.tw-align-items-center { align-items: center; }
+.tw-align-items-baseline { align-items: baseline; }
+.tw-align-items-stretch { align-items: stretch; }
 
 /* Order utilities */
-.tw-order-first { order: -1 !important; }
-.tw-order-last { order: 13 !important; }
-.tw-order-0 { order: 0 !important; }
-.tw-order-1 { order: 1 !important; }
-.tw-order-2 { order: 2 !important; }
-.tw-order-3 { order: 3 !important; }
-.tw-order-4 { order: 4 !important; }
-.tw-order-5 { order: 5 !important; }
-.tw-order-6 { order: 6 !important; }
-.tw-order-7 { order: 7 !important; }
-.tw-order-8 { order: 8 !important; }
-.tw-order-9 { order: 9 !important; }
-.tw-order-10 { order: 10 !important; }
-.tw-order-11 { order: 11 !important; }
-.tw-order-12 { order: 12 !important; }
+.tw-order-first { order: -1; }
+.tw-order-last { order: 13; }
+.tw-order-0 { order: 0; }
+.tw-order-1 { order: 1; }
+.tw-order-2 { order: 2; }
+.tw-order-3 { order: 3; }
+.tw-order-4 { order: 4; }
+.tw-order-5 { order: 5; }
+.tw-order-6 { order: 6; }
+.tw-order-7 { order: 7; }
+.tw-order-8 { order: 8; }
+.tw-order-9 { order: 9; }
+.tw-order-10 { order: 10; }
+.tw-order-11 { order: 11; }
+.tw-order-12 { order: 12; }
 
 /* Gutter utilities */
 .tw-no-gutters {
