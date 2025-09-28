@@ -83,24 +83,7 @@ select {
    FONT FACE DECLARATIONS
    ======================================== */
 
-/* Add your custom fonts here */
-@font-face {
-    font-family: 'Amulya';
-    src: url('../path-to-your-font/Amulya-Bold.woff2') format('woff2'),
-         url('../path-to-your-font/Amulya-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Synonym';
-    src: url('../path-to-your-font/Synonym-Regular.woff2') format('woff2'),
-         url('../path-to-your-font/Synonym-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Manrope:wght@200..800&display=swap');
 
 /* ========================================
    SPACING SYSTEM
@@ -1056,9 +1039,9 @@ select {
 /* CSS Variables for Typography */
 :root {
     /* Font Families */
-    --tw-font-heading: 'Amulya', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --tw-font-body: 'Synonym', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --tw-font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    --tw-font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --tw-font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --tw-font-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
     
     /* Font Sizes - Perfect Fourth Scale (1.333) */
     --tw-text-xs: 0.75rem;     /* 12px */
