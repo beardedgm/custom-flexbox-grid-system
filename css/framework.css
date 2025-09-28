@@ -1685,14 +1685,6 @@ body {
     .tw-offset-xl-11 { margin-left: 91.666667%; }
 }
 
-/* Legacy vertical alignment utilities (kept for backward compatibility). */
-/* Note: Prefer tw-items-* for new flexbox layouts. */
-.tw-align-items-start { align-items: flex-start; }
-.tw-align-items-end { align-items: flex-end; }
-.tw-align-items-center { align-items: center; }
-.tw-align-items-baseline { align-items: baseline; }
-.tw-align-items-stretch { align-items: stretch; }
-
 /* Order utilities */
 .tw-order-first { order: -1; }
 .tw-order-last { order: 13; }
