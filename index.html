@@ -951,8 +951,10 @@ greet('Developer');</code></pre>
         <div class="tw-section">
             <h2>Offset Columns</h2>
             <div class="tw-code-snippet">
-                &lt;div class="tw-col-4 tw-offset-4"&gt;...&lt;/div&gt;
+                &lt;div class="tw-col-4 tw-offset-4"&gt;...&lt;/div&gt;<br>
+                &lt;div class="tw-col-12 tw-offset-0 tw-col-md-6 tw-offset-md-3"&gt;...&lt;/div&gt;
             </div>
+            <p class="tw-text-secondary" style="margin-top: 15px;">Use <code>.tw-offset-0</code> alongside responsive classes like <code>.tw-offset-md-3</code> to clear offsets on smaller viewports while keeping the desired offset at larger breakpoints.</p>
             <div class="tw-row">
                 <div class="tw-col-4 tw-offset-4">
                     <div class="demo-box">tw-col-4 tw-offset-4</div>
@@ -969,6 +971,11 @@ greet('Developer');</code></pre>
             <div class="tw-row">
                 <div class="tw-col-6 tw-offset-3">
                     <div class="demo-box stone">tw-col-6 tw-offset-3</div>
+                </div>
+            </div>
+            <div class="tw-row">
+                <div class="tw-col-12 tw-offset-0 tw-col-md-6 tw-offset-md-3">
+                    <div class="demo-box alt2">Base reset with md offset</div>
                 </div>
             </div>
         </div>
