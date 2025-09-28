@@ -83,7 +83,7 @@ select {
    FONT FACE DECLARATIONS
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Manrope:wght@200..800&display=swap');
 
 /* ========================================
    SPACING SYSTEM
@@ -1039,7 +1039,7 @@ select {
 /* CSS Variables for Typography */
 :root {
     /* Font Families */
-    --tw-font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --tw-font-heading: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --tw-font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --tw-font-mono: 'Geist Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
     
