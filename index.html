@@ -1788,6 +1788,7 @@
            BUTTON COMPONENTS
            ======================================== */
 
+        /* Base button size: omit size modifiers for this default scale. */
         .tw-btn,
         button.tw-btn,
         a.tw-btn,
@@ -1800,6 +1801,7 @@
             justify-content: center;
             gap: var(--tw-space-2);
             padding: var(--tw-space-2) var(--tw-space-4);
+            font-size: var(--tw-text-base);
             font-weight: 600;
             line-height: 1.25;
             border-radius: 0.375rem;
@@ -1809,6 +1811,34 @@
             transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
             background-color: var(--tw-color-light);
             color: var(--tw-color-primary);
+        }
+
+        .tw-btn-xs {
+            padding: var(--tw-space-1) var(--tw-space-2);
+            gap: var(--tw-space-1);
+            font-size: var(--tw-text-xs);
+            line-height: 1.15;
+        }
+
+        .tw-btn-sm {
+            padding: var(--tw-space-2) var(--tw-space-3);
+            gap: var(--tw-space-1);
+            font-size: var(--tw-text-sm);
+            line-height: 1.2;
+        }
+
+        .tw-btn-lg {
+            padding: var(--tw-space-3) var(--tw-space-5);
+            gap: var(--tw-space-3);
+            font-size: var(--tw-text-lg);
+            line-height: 1.35;
+        }
+
+        .tw-btn-xl {
+            padding: var(--tw-space-4) var(--tw-space-6);
+            gap: var(--tw-space-4);
+            font-size: var(--tw-text-xl);
+            line-height: 1.4;
         }
 
         .tw-btn:focus-visible,
